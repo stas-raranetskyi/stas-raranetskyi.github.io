@@ -5,7 +5,7 @@
 mozGetUserMedia || navigator.msGetUserMedia;
   navigator.getMedia({
    video: true,
-   audio: false
+   audio: true
   }, function(stream) {
    video.src = vendorUrl.createObjectURL(stream);
    video.play();
