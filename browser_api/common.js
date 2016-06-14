@@ -10,6 +10,6 @@ mozGetUserMedia || navigator.msGetUserMedia;
    video.src = vendorUrl.createObjectURL(stream);
    video.play();
   }, function(error) {
-   alert('Ошибка! Что-то пошло не так, попробуйте позже.');
+   console.log('Ошибка! Что-то пошло не так, попробуйте позже.');
   });
 })();
