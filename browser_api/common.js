@@ -46,6 +46,7 @@ function showPosition(position) {
 }
 
 var map;
+
 (function(map,latitude,longitude){
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: latitude, lng: longitude},
