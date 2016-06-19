@@ -31,16 +31,7 @@
         myMap.geoObjects.add(myPlacemark);
     }*/
 
-    navigator.geolocation.getCurrentPosition(showPosition); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
-
-    var lat,
-        lng;
-    function showPosition(position) {
-        lat = parseFloat(position.coords.latitude);
-        lng = parseFloat(position.coords.longitude);
-        console.log(lat);
-        console.log(lng);
-    }
+    /*
 
     var map;
     function initMap() {
@@ -48,6 +39,23 @@
             center: {lat: lat, lng: lng},
             zoom: 8
         });
-    }
+    }*/
 
 })();
+navigator.geolocation.getCurrentPosition(showPosition); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
+
+var lat,
+    lng;
+function showPosition(position) {
+    lat = parseFloat(position.coords.latitude);
+    lng = parseFloat(position.coords.longitude);
+    console.log(lat);
+    console.log(lng);
+}
+var map;
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+    });
+}
