@@ -32,6 +32,7 @@
     }*/
 
 })();
+
 navigator.geolocation.getCurrentPosition(showPosition);
 
 var latitude_с,
@@ -40,6 +41,7 @@ function showPosition(position) {
     latitude_с = parseFloat(position.coords.latitude);
     longitude_с = parseFloat(position.coords.longitude);
 }
+
 console.log(latitude_с);
 console.log(longitude_с);
 
