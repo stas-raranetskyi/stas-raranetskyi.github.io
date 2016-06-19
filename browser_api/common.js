@@ -32,25 +32,21 @@
     }*/
 
 })();
-
 navigator.geolocation.getCurrentPosition(showPosition);
 
 var latitude,
     longitude;
-
 function showPosition(position) {
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
+    latitude = parseFloat(position.coords.latitude);
+    longitude = parseFloat(position.coords.longitude);
 }
-
 console.log(latitude);
 console.log(longitude);
 
 var map;
-
-(function(map,latitude,longitude){
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: latitude, lng: longitude},
-            zoom: 8
-        });
-})(map,latitude,longitude);
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: latitude, lng: longitude},
+        zoom: 8
+    });
+}
