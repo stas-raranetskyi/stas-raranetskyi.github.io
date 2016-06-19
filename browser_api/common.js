@@ -49,8 +49,8 @@ var latitude,
 function showPosition(position) {
     latitude = parseFloat(position.coords.latitude);
     longitude = parseFloat(position.coords.longitude);
-    console.log(lat);
-    console.log(lng);
+    console.log(latitude);
+    console.log(longitude);
 }
 
 var map;
