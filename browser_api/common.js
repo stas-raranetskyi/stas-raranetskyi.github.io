@@ -47,10 +47,8 @@ function showPosition(position) {
 
 var map;
 (function(map,latitude,longitude){
-    function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: latitude, lng: longitude},
             zoom: 8
         });
-    }
 })(map,latitude,longitude);
