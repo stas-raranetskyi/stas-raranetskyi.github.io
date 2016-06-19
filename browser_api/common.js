@@ -34,19 +34,19 @@
 })();
 navigator.geolocation.getCurrentPosition(showPosition);
 
-var latitude,
-    longitude;
+var latitude_с,
+    longitude_с;
 function showPosition(position) {
-    latitude = parseFloat(position.coords.latitude);
-    longitude = parseFloat(position.coords.longitude);
+    latitude_с = parseFloat(position.coords.latitude);
+    longitude_с = parseFloat(position.coords.longitude);
 }
-console.log(latitude);
-console.log(longitude);
+console.log(latitude_с);
+console.log(longitude_с);
 
 var map;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: latitude, lng: longitude},
+        center: {lat: latitude_с, lng: longitude_с},
         zoom: 8
     });
 }
