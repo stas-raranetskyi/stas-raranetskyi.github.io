@@ -37,7 +37,7 @@
             zoom: 15
         });
 
-        myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+        myPlacemark = new ymaps.Placemark([lat, lng], {
             hintContent: 'Москва!',
             balloonContent: 'Столица России'
         });
