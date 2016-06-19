@@ -12,7 +12,7 @@
     navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.msGetUserMedia || navigator.mediaDevices.getUserMedia;
 
     canvas_wrap.style.display = "none";
-    console.log(navigator.webkitGetUserMedia);
+    console.log(navigator.mediaDevices.getUserMedia);
     navigator.getMedia({
         video: true,
         audio: false
