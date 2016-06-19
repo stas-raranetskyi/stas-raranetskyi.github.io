@@ -26,7 +26,7 @@
     	ymaps.ready(init);
     }
 
-    showError(){
+    function showError(){
     	console.log("Не удалось получить геоданные!");
     }
 
