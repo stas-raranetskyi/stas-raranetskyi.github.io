@@ -24,7 +24,7 @@
         console.log(lng);
     }
 
-    ymaps.ready(init);
+    /*ymaps.ready(init);
     var myMap,
         myPlacemark;
 
@@ -39,6 +39,16 @@
         });
 
         myMap.geoObjects.add(myPlacemark);
+    }*/
+
+
+
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: lat, lng: lng},
+            zoom: 8
+        });
     }
 
 })();
