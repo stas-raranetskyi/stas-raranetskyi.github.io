@@ -9,7 +9,7 @@
     canvas = document.getElementById('canvas'),
     canvas_wrap = document.getElementById('canvas-wrap'),
     context = canvas.getContext('2d'),
-    navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+    navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.mediaDevices.getUserMedia;
 
     canvas_wrap.style.display = "none";
     console.log(navigator.webkitGetUserMedia);
