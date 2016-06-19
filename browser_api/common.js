@@ -2,7 +2,15 @@
 
 	/*Видео*/
 
-    
+
+    var video = document.getElementById('video'),
+    vendorUrl = window.URL || window.webkitURL;
+    button = document.getElementById('button'),
+    canvas = document.getElementById('canvas'),
+    canvas_wrap = document.getElementById('canvas-wrap'),
+    context = canvas.getContext('2d'),
+    navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.mediaDevices.getUserMedia;
+
     // Older browsers might not implement mediaDevices at all, so we set an empty object first
     if(navigator.mediaDevices === undefined) {
       navigator.mediaDevices = {};
@@ -14,17 +22,9 @@
     if(navigator.mediaDevices.getUserMedia === undefined) {
       navigator.mediaDevices.getUserMedia = promisifiedOldGUM;
     }
-    var video = document.getElementById('video'),
-    vendorUrl = window.URL || window.webkitURL;
-    button = document.getElementById('button'),
-    canvas = document.getElementById('canvas'),
-    canvas_wrap = document.getElementById('canvas-wrap'),
-    context = canvas.getContext('2d'),
-    navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.msGetUserMedia || navigator.mediaDevices.getUserMedia;
-
     
     canvas_wrap.style.display = "none";
-    console.log(navigator.mediaDevices.getUserMedia);
+    console.log(navigator.mozGetUserMedia;
     navigator.getMedia({
         video: true,
         audio: false
