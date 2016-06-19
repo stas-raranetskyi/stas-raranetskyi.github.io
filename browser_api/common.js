@@ -1,5 +1,5 @@
 (function() {
-    var video = document.getElementById('video'),
+    /*var video = document.getElementById('video'),
     vendorUrl = window.URL || window.webkitURL;
     navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
@@ -11,7 +11,7 @@
         video.play();
     }, function(error) {
         console.log('Ошибка! Что-то пошло не так, попробуйте позже.');
-    });
+    });*/
 
     navigator.geolocation.getCurrentPosition(showPosition); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
 
@@ -32,8 +32,8 @@
 
     function init(){
         myMap = new ymaps.Map ("map", {
-            //center: [lat, lng],
-            center: [55.76, 37.64],
+            center: [lat, lng],
+            //center: [55.76, 37.64],
             zoom: 15
         });
 
