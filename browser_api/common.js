@@ -19,8 +19,8 @@
         lng;
     function showPosition(position) {
         (function(position){
-            lat = position.coords.latitude.toFixed(2);
-            lng = position.coords.longitude.toFixed(2);
+            lat = parseFloat(position.coords.latitude.toFixed(2));
+            lng = parseFloat(position.coords.longitude.toFixed(2));
             console.log(lat);
             console.log(lng);
         })(position)
@@ -38,8 +38,7 @@
         });
 
         myPlacemark = new ymaps.Placemark([lat, lng], {
-            hintContent: 'Москва!',
-            balloonContent: 'Столица России'
+            balloonContent: 'Вы находитесь здесь'
         });
 
         myMap.geoObjects.add(myPlacemark);
