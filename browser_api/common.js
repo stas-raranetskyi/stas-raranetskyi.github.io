@@ -37,6 +37,7 @@ navigator.geolocation.getCurrentPosition(showPosition);
 
 var latitude_с,
     longitude_с;
+
 function showPosition(position) {
     (function(position,latitude_с,longitude_с){
         latitude_с = parseFloat(position.coords.latitude);
