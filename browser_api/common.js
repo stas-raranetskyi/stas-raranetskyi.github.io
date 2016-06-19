@@ -21,8 +21,6 @@
         (function(position){
             lat = parseFloat(position.coords.latitude);
             lng = parseFloat(position.coords.longitude);
-            console.log(lat);
-            console.log(lng);
         })(position)
     }
 
@@ -33,7 +31,6 @@
     function init(){
         myMap = new ymaps.Map ("map", {
             center: [lat, lng],
-            //center: [55.76, 37.64],
             zoom: 18
         });
 

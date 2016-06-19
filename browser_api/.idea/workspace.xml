@@ -41,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/common.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4069641" vertical-offset="0" max-vertical-offset="919">
-              <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="24" selection-end-column="29" />
+              <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -280,7 +280,7 @@
     <entry file="file://$PROJECT_DIR$/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4069641" vertical-offset="0" max-vertical-offset="919">
-          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="24" selection-end-column="29" />
+          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
           <folding />
         </state>
       </provider>
