@@ -13,7 +13,7 @@
         console.log('Ошибка! Что-то пошло не так, попробуйте позже.');
     });
 
-    navigator.geolocation.getCurrentPosition(showPosition); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
+    navigator.geolocation.getCurrentPosition(showPosition,showError); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
 
     var lat,
         lng;
@@ -24,6 +24,10 @@
         console.log(lng);
 
     	ymaps.ready(init);
+    }
+
+    showError(){
+    	console.log("Не удалось получить геоданные!");
     }
 
     var myMap,
