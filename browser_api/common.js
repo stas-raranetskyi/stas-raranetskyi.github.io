@@ -1,5 +1,5 @@
 (function() {
-    var video = document.getElementById('video'),
+    /*var video = document.getElementById('video'),
     vendorUrl = window.URL || window.webkitURL;
     navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
@@ -11,18 +11,8 @@
         video.play();
     }, function(error) {
         console.log('Ошибка! Что-то пошло не так, попробуйте позже.');
-    });
+    });*/
 
-    navigator.geolocation.getCurrentPosition(showPosition); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
-
-    var lat,
-        lng;
-    function showPosition(position) {
-        lat = parseFloat(position.coords.latitude);
-        lng = parseFloat(position.coords.longitude);
-        console.log(lat);
-        console.log(lng);
-    }
 
     /*ymaps.ready(init);
     var myMap,
@@ -41,14 +31,24 @@
         myMap.geoObjects.add(myPlacemark);
     }*/
 
-
-
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: lat, lng: lng},
-            zoom: 8
-        });
-    }
-
 })();
+
+
+navigator.geolocation.getCurrentPosition(showPosition); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
+
+var lat,
+    lng;
+function showPosition(position) {
+    lat = parseFloat(position.coords.latitude);
+    lng = parseFloat(position.coords.longitude);
+    console.log(lat);
+    console.log(lng);
+}
+
+var map;
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: lat, lng: lng},
+        zoom: 8
+    });
+}
