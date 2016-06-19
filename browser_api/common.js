@@ -35,10 +35,10 @@
         myMap = new ymaps.Map ("map", {
             center: [lat, lng],
             //center: [55.76, 37.64],
-            zoom: 10
+            zoom: 15
         });
 
-        //myPlacemark = new ymaps.Placemark([lat, lng], { content: 'Ваше', balloonContent: 'местонахождение' });
+        myPlacemark = new ymaps.Placemark([lat, lng], { content: 'Ваше', balloonContent: 'местонахождение' });
     }
 
 })();
