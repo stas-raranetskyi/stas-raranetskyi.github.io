@@ -31,24 +31,24 @@
         myMap.geoObjects.add(myPlacemark);
     }*/
 
+    navigator.geolocation.getCurrentPosition(showPosition);
+
+    var latitude_с,
+        longitude_с;
+
+    function showPosition(position) {
+        (function(position,latitude_с,longitude_с){
+            latitude_с = parseFloat(position.coords.latitude);
+            longitude_с = parseFloat(position.coords.longitude);
+            console.log(latitude_с);
+            console.log(longitude_с);
+        })(position,latitude_с,longitude_с)
+    }
+
+    console.log(latitude_с);
+    console.log(longitude_с);
+
 })();
-
-navigator.geolocation.getCurrentPosition(showPosition);
-
-var latitude_с,
-    longitude_с;
-
-function showPosition(position) {
-    (function(position,latitude_с,longitude_с){
-        latitude_с = parseFloat(position.coords.latitude);
-        longitude_с = parseFloat(position.coords.longitude);
-        console.log(latitude_с);
-        console.log(longitude_с);
-    })(position,latitude_с,longitude_с)
-}
-
-console.log(latitude_с);
-console.log(longitude_с);
 
 var map;
 function initMap() {
