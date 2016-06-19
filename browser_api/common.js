@@ -22,10 +22,10 @@
         lng = parseFloat(position.coords.longitude);
         console.log(lat);
         console.log(lng);
+
+    	ymaps.ready(init);
     }
 
-    ymaps.ready(init);
-    
     var myMap,
         myPlacemark;
 
