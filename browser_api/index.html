@@ -13,6 +13,7 @@
   background: #ccc;
   border: 10px solid #ddd;
   margin-right: 20px;
+  vertical-align: top;
 }
 video{
           transform: scaleX(-1);
@@ -28,8 +29,7 @@ video{
         <div class="booth">
          <video id="video" width="400" height="300" autoplay></video>
         </div>
-        <div class="booth">
-          <span> canvas </span>
+        <div class="booth" id="canvas-wrap">
           <canvas id="canvas" width="400" height="300" ></canvas>
         </div>
         <input id="button" type="button" value="Жми!" />

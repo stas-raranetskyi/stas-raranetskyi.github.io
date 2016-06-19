@@ -8,8 +8,9 @@
     navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia,
     button = document.getElementById('button'),
     canvas = document.getElementById('canvas'),
+    canvas_wrap = document.getElementById('canvas-wrap'),
     context = canvas.getContext('2d');
-    canvas.style.display = "none";
+    canvas_wrap.style.display = "none";
 
     navigator.getMedia({
         video: true,
@@ -23,7 +24,7 @@
 
      // функция которая будет выполнена при нажатии на кнопку захвата кадра
     var captureMe = function () {
-      canvas.style.display = "block";
+      canvas_wrap.style.display = "block";
       // переворачиваем canvas зеркально по горизонтали (см. описание внизу статьи)
       context.translate(canvas.width, 0);
       context.scale(-1, 1);
