@@ -20,6 +20,8 @@
     function showPosition(position) {
         lat = parseFloat(position.coords.latitude);
         lng = parseFloat(position.coords.longitude);
+        console.log(lat);
+        console.log(lng);
     }
 
     ymaps.ready(init);
