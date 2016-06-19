@@ -31,24 +31,14 @@
         myMap.geoObjects.add(myPlacemark);
     }*/
 
-    /*
-
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: lat, lng: lng},
-            zoom: 8
-        });
-    }*/
-
 })();
-navigator.geolocation.getCurrentPosition(showPosition); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
+navigator.geolocation.getCurrentPosition(showPosition);
 
 var latitude,
     longitude;
 function showPosition(position) {
-    latitude = parseFloat(position.coords.latitude);
-    longitude = parseFloat(position.coords.longitude);
+    latitude = parseFloat(position.coords.latitude.toFixed(2));
+    longitude = parseFloat(position.coords.longitude.toFixed(2));
     console.log(latitude);
     console.log(longitude);
 }
