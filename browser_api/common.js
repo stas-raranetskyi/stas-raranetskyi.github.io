@@ -15,15 +15,15 @@
 
     navigator.geolocation.getCurrentPosition(showPosition); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
 
-    console.log(navigator.geolocation.getCurrentPosition(showPosition));
-
     var lat,
         lng;
     function showPosition(position) {
-        lat = position.coords.latitude;
-        lng = position.coords.longitude;
-        console.log(lat);
-        console.log(lng);
+        (function(position){
+            lat = position.coords.latitude;
+            lng = position.coords.longitude;
+            console.log(lat);
+            console.log(lng);
+        })(position)
     }
 
     ymaps.ready(init);
