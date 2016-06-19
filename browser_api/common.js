@@ -1,6 +1,6 @@
 (function() {
 
-	/*Видео*/
+    /*Видео*/
 
 
     var video = document.getElementById('video'),
@@ -70,11 +70,11 @@
         console.log(lat);
         console.log(lng);
 
-    	ymaps.ready(init);
+        ymaps.ready(init);
     }
 
     function showError(){
-    	console.log("Не удалось получить геоданные!");
+        console.log("Не удалось получить геоданные!");
     }
 
     var myMap,
