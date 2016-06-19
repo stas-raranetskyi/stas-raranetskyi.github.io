@@ -44,7 +44,6 @@
             console.log(longitude_с);
         })(position,latitude_с,longitude_с)
     }
-
     console.log(latitude_с);
     console.log(longitude_с);
 
