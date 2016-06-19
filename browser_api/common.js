@@ -44,18 +44,19 @@
 })();
 navigator.geolocation.getCurrentPosition(showPosition); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
 
-var lat,
-    lng;
+var latitude,
+    longitude;
 function showPosition(position) {
-    lat = parseFloat(position.coords.latitude);
-    lng = parseFloat(position.coords.longitude);
+    latitude = parseFloat(position.coords.latitude);
+    longitude = parseFloat(position.coords.longitude);
     console.log(lat);
     console.log(lng);
 }
+
 var map;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
+        center: {lat: latitude, lng: longitude},
         zoom: 8
     });
 }
