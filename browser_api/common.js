@@ -19,8 +19,8 @@
         lng;
     function showPosition(position) {
         (function(position){
-            lat = parseFloat(position.coords.latitude.toFixed(2));
-            lng = parseFloat(position.coords.longitude.toFixed(2));
+            lat = parseFloat(position.coords.latitude);
+            lng = parseFloat(position.coords.longitude);
             console.log(lat);
             console.log(lng);
         })(position)
