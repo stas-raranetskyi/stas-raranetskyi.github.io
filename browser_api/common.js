@@ -32,10 +32,12 @@
     }*/
 
 })();
+
 navigator.geolocation.getCurrentPosition(showPosition);
 
 var latitude,
     longitude;
+
 function showPosition(position) {
     latitude = parseFloat(position.coords.latitude.toFixed(2));
     longitude = parseFloat(position.coords.longitude.toFixed(2));
