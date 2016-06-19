@@ -37,12 +37,12 @@
             zoom: 15
         });
 
-        /*myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+        myPlacemark = new ymaps.Placemark([55.76, 37.64], {
             hintContent: 'Москва!',
             balloonContent: 'Столица России'
         });
 
-        myMap.geoObjects.add(myPlacemark);*/
+        myMap.geoObjects.add(myPlacemark);
     }
 
 })();
