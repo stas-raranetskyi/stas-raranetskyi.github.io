@@ -39,11 +39,11 @@ var latitude,
     longitude;
 
 function showPosition(position) {
-    latitude = parseFloat(position.coords.latitude.toFixed(2));
-    longitude = parseFloat(position.coords.longitude.toFixed(2));
-    console.log(latitude);
-    console.log(longitude);
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
 }
+console.log(latitude);
+console.log(longitude);
 
 var map;
 
