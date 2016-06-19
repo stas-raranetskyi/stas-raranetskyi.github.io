@@ -22,9 +22,9 @@
     if(navigator.mediaDevices.getUserMedia === undefined) {
       navigator.mediaDevices.getUserMedia = promisifiedOldGUM;
     }
-    
+
     canvas_wrap.style.display = "none";
-    console.log(navigator.mozGetUserMedia;
+    console.log(navigator.mozGetUserMedia);
     navigator.getMedia({
         video: true,
         audio: false
