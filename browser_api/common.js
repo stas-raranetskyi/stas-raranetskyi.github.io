@@ -41,7 +41,6 @@
 
 
 
-
     /*Карта*/
 
     navigator.geolocation.getCurrentPosition(showPosition,showError); 
