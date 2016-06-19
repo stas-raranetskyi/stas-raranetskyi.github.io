@@ -21,8 +21,21 @@
     navigator.geolocation.getCurrentPosition(showPosition); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
     function showPosition(position) {
         /* Выводим координаты */
-        document.write("Широта: " + position.coords.latitude + "<br />");
-        document.write("Долгота: " + position.coords.longitude);
+        //document.write("Широта: " + position.coords.latitude + "<br />");
+        //document.write("Долгота: " + position.coords.longitude);
+
+        ymaps.ready(init);
+        var myMap,
+            myPlacemark;
+
+        function init(){
+            myMap = new ymaps.Map ("map", {
+                center: [position.coords.latitude, position.coords.longitude],
+                zoom: 7
+            });
+
+            myPlacemark = new ymaps.Placemark([position.coords.latitude, position.coords.longitude], { content: 'Ваше', balloonContent: 'местонахождение' });
+        }
     }
 
 })();
