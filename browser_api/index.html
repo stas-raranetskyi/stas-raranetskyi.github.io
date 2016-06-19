@@ -8,10 +8,11 @@
 </head>
 <style type="text/css">
 .booth {
+  display: inline-block;
   width: 400px;
   background: #ccc;
   border: 10px solid #ddd;
-  margin: 0 auto;
+  margin-right: 20px;
 }
 video{
           transform: scaleX(-1);
@@ -23,14 +24,16 @@ video{
 </style>
 <body>
 
-      <div class="booth">
-       <video id="video" width="400" height="300" autoplay></video>
+      <div style="text-align: center;">
+        <div class="booth">
+         <video id="video" width="400" height="300" autoplay></video>
+        </div>
+        <div class="booth">
+          <span> canvas </span>
+          <canvas id="canvas" width="400" height="300" ></canvas>
+        </div>
+        <input id="button" type="button" value="Жми!" />
       </div>
-      <div class="booth">
-        <span> canvas </span>
-        <canvas id="canvas" width="400" height="300" ></canvas>
-      </div>
-      <input id="button" type="button" value="Жми!" />
 
 
      <div id="map" style="height: 350px;"></div>
