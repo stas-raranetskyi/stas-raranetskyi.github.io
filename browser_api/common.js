@@ -39,7 +39,6 @@
     }
 
     button.addEventListener('click', captureMe);
-    
 
 
 
