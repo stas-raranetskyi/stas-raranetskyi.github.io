@@ -19,23 +19,25 @@
     });
 
     navigator.geolocation.getCurrentPosition(showPosition); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
+
+    var lat,
+        lng;
     function showPosition(position) {
-        /* Выводим координаты */
-        //document.write("Широта: " + position.coords.latitude + "<br />");
-        //document.write("Долгота: " + position.coords.longitude);
+        lat = position.coords.latitude;
+        lng = position.coords.longitude;
+    }
 
-        ymaps.ready(init);
-        var myMap,
-            myPlacemark;
+    ymaps.ready(init);
+    var myMap,
+        myPlacemark;
 
-        function init(){
-            myMap = new ymaps.Map ("map", {
-                center: [position.coords.latitude, position.coords.longitude],
-                zoom: 7
-            });
+    function init(yamaps,mymao,myPlacemark){
+        myMap = new ymaps.Map ("map", {
+            center: [lat, lng],
+            zoom: 7
+        });
 
-            myPlacemark = new ymaps.Placemark([position.coords.latitude, position.coords.longitude], { content: 'Ваше', balloonContent: 'местонахождение' });
-        }
+        //myPlacemark = new ymaps.Placemark([lat, lng], { content: 'Ваше', balloonContent: 'местонахождение' });
     }
 
 })();
