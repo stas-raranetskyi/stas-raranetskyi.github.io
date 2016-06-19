@@ -38,8 +38,10 @@ navigator.geolocation.getCurrentPosition(showPosition);
 var latitude_с,
     longitude_с;
 function showPosition(position) {
-    latitude_с = parseFloat(position.coords.latitude);
-    longitude_с = parseFloat(position.coords.longitude);
+    (function(position,latitude_с,longitude_с){
+        latitude_с = parseFloat(position.coords.latitude);
+        longitude_с = parseFloat(position.coords.longitude);
+    })(position,latitude_с,longitude_с)
 }
 
 console.log(latitude_с);
