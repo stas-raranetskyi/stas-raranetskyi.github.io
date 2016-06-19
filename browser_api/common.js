@@ -32,8 +32,8 @@
 
     function init(){
         myMap = new ymaps.Map ("map", {
-            center: [lat, lng],
-            //center: [55.76, 37.64],
+            //center: [lat, lng],
+            center: [55.76, 37.64],
             zoom: 15
         });
 
