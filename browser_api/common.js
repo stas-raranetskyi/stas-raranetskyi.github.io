@@ -1,7 +1,12 @@
 (function() {
+
+	/*Видео*/
+
+
     var video = document.getElementById('video'),
     vendorUrl = window.URL || window.webkitURL;
-    navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+    navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia,
+    button = document.getElementById('button');
 
     navigator.getMedia({
         video: true,
@@ -12,8 +17,14 @@
     }, function(error) {
         console.log('Ошибка! Что-то пошло не так, попробуйте позже.');
     });
+    
 
-    navigator.geolocation.getCurrentPosition(showPosition,showError); // Запрашиваем местоположение, и в случае успеха вызываем функцию showPosition
+
+
+
+    /*Карта*/
+
+    navigator.geolocation.getCurrentPosition(showPosition,showError); 
 
     var lat,
         lng;

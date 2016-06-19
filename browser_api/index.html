@@ -13,12 +13,20 @@
   border: 10px solid #ddd;
   margin: 0 auto;
 }
+video{
+          transform: scaleX(-1);
+       -o-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+     -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+}
 </style>
 <body>
 
-     <div class="booth">
+      <div class="booth">
        <video id="video" width="400" height="300" autoplay></video>
       </div>
+      <input id="button" type="button" value="Жми!" />
 
 
      <div id="map" style="height: 350px;"></div>
