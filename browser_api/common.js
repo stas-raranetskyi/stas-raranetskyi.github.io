@@ -5,13 +5,14 @@
 
     var video = document.getElementById('video'),
     vendorUrl = window.URL || window.webkitURL;
-    navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia,
     button = document.getElementById('button'),
     canvas = document.getElementById('canvas'),
     canvas_wrap = document.getElementById('canvas-wrap'),
-    context = canvas.getContext('2d');
-    canvas_wrap.style.display = "none";
+    context = canvas.getContext('2d'),
+    navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
+    canvas_wrap.style.display = "none";
+    console.log(navigator.getMedia());
     navigator.getMedia({
         video: true,
         audio: false
