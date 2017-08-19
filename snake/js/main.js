@@ -1,12 +1,17 @@
-/*load images start page*/
+/*cash images snake*/
 
+var snakeImages = {};
 for(var i = 0; i < 4; i++){
+    snakeImages[i] = [];
     var image = new Image();
     image.src = 'images/head-' + i + '.png';
+    snakeImages[i].push(image);
     image = new Image();
     image.src = 'images/body-' + i + '.png';
+    snakeImages[i].push(image);
     image = new Image();
     image.src = 'images/tale-' + i + '.png';
+    snakeImages[i].push(image);
 }
 
 var Game = function(name){
@@ -140,8 +145,7 @@ var Game = function(name){
                 game.context.fillStyle = '#feaa60';
             }
             else if(game.style == 'image'){
-                var image = new Image();
-                image.src = 'images/body-' + game.snake[i].dir + '.png';
+                var image = snakeImages[game.snake[i].dir][1];
             }
 
             if(i == 0 || i == 1){
@@ -149,11 +153,11 @@ var Game = function(name){
                     game.context.fillStyle = '#ff4d77';
                 }
                 else if(game.style == 'image'){
-                    image.src = 'images/head-' + game.snake[i].dir + '.png';
+                    image = snakeImages[game.snake[i].dir][0];
                 }
             }
             else if(i == game.num - 1){
-                image.src = 'images/tale-' + game.snake[i].dir + '.png';
+                image = snakeImages[game.snake[i].dir][2];
             }
 
             if(game.style == 'color'){
@@ -186,7 +190,6 @@ var Game = function(name){
                 game.context.drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
             }
         }
-        console.log(game.snake[game.num - 1]);
     }
 
     this.drawField = function(){
