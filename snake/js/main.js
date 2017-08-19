@@ -1,3 +1,14 @@
+/*load images start page*/
+
+for(var i = 0; i < 4; i++){
+    var image = new Image();
+    image.src = 'images/head-' + i + '.png';
+    image = new Image();
+    image.src = 'images/body-' + i + '.png';
+    image = new Image();
+    image.src = 'images/tale-' + i + '.png';
+}
+
 var Game = function(name){
 
     /*fields*/
@@ -18,14 +29,8 @@ var Game = function(name){
     this.height = this.m * this.scale;
     this.indent = 50;
     this.snake = [];
-    this.snakeHead = new Image();
-    this.snakeHead.src = 'images/head.png';
-    this.snakeBody = new Image();
-    this.snakeBody.src = 'images/body.png';
     this.appleImg = new Image();
     this.appleImg.src = 'images/apple.png';
-    this.taleImg = new Image();
-    this.taleImg.src = 'images/tale.png';
     this.snakeCoord = {
         x: 0,
         y: 0,
@@ -128,53 +133,58 @@ var Game = function(name){
             }
         }
 
-        if(game.style == 'image'){
-            game.context.save();
-            game.context.translate(game.scale / 2, game.scale / 2);
-        }
-
         for(var i = 0; i < game.num; i++){
 
+            
             if(game.style == 'color'){
                 game.context.fillStyle = '#feaa60';
             }
             else if(game.style == 'image'){
-                var image = game.snakeBody;
+                var image = new Image();
+                image.src = 'images/body-' + game.snake[i].dir + '.png';
             }
 
-            if(i == 0){
+            if(i == 0 || i == 1){
                 if(game.style == 'color'){
                     game.context.fillStyle = '#ff4d77';
                 }
                 else if(game.style == 'image'){
-                    image = game.snakeHead;
+                    image.src = 'images/head-' + game.snake[i].dir + '.png';
                 }
             }
             else if(i == game.num - 1){
-                image = game.taleImg;
+                image.src = 'images/tale-' + game.snake[i].dir + '.png';
             }
 
             if(game.style == 'color'){
                 game.context.fillRect(game.snake[i].x * game.scale, game.snake[i].y * game.scale, game.scale, game.scale);
             }
             else if(game.style == 'image'){
-                if(game.snake[i].dir == 0){
-                    game.context.rotate(18 * Math.PI / 180);
+                var sourceX = 0;
+                var sourceY = 0;
+                var sourceWidth = game.scale;
+                var sourceHeight = game.scale;
+                var destWidth = sourceWidth;
+                var destHeight = sourceHeight;
+                var destX = game.snake[i].x * game.scale;
+                var destY = game.snake[i].y * game.scale;
+                if(i == 0){
+                    if(game.snake[i].dir == 2){
+                        sourceX = game.scale;
+                    }
+                    else if(game.snake[i].dir == 3){
+                        sourceY = game.scale;
+                    }
+                }else if(i == 1){
+                    if(game.snake[i].dir == 0){
+                        sourceX = game.scale;
+                    }
+                    else if(game.snake[i].dir == 1){
+                        sourceY = game.scale;
+                    }
                 }
-                else if(game.snake[i].dir == 1){
-                    game.context.rotate(27 * Math.PI / 180);
-                }
-                else if(game.snake[i].dir == 2){
-                    game.context.rotate(0 * Math.PI / 180);
-                }
-                else if(game.snake[i].dir == 3){
-                    game.context.rotate(9 * Math.PI / 180);
-                }
-                game.context.drawImage(image, game.snake[i].x * game.scale, game.snake[i].y * game.scale);
+                game.context.drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
             }
-        }
-        if(game.style == 'image'){
-            game.context.restore();
         }
         console.log(game.snake[game.num - 1]);
     }
@@ -214,7 +224,7 @@ var Game = function(name){
     };
 
     this.reset = function(){
-        game.num = 4;
+        game.num = 5;
         game.snake = [];
         game.dir = 2;
         game.score = 0;
