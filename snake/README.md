@@ -1,4 +1,4 @@
-# snake
+<h1>Snake game</h1>
 
 <h2>Controls</h2>
 #← - left <br>
