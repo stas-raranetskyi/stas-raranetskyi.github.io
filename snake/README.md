@@ -1,5 +1,6 @@
 # snake
 
+<h2>Controls</h2>
 #← - left <br>
 #↑ - top <br>
 #→ - right <br>
