@@ -5,29 +5,38 @@ var Game = function(name){
     this.context = this.canvas.getContext('2d');
     this.context.fillStyle = 'red';
     this.gameEngine;
-    this.n = 20;
+    this.n = 30;
     this.m = 20;
-    this.scale = 25;
+    this.scale = 30;
     this.w = this.scale * this.n;
     this.h = this.scale * this.m;
     this.dir = 2;
-    this.num = 4;
+    this.num = 5;
     this.score = 0;
     this.speed = 200;
-    this.width = 500;
-    this.height = 500;
+    this.width = this.n * this.scale;
+    this.height = this.m * this.scale;
     this.indent = 50;
     this.snake = [];
+    this.snakeHead = new Image();
+    this.snakeHead.src = 'images/head.png';
+    this.snakeBody = new Image();
+    this.snakeBody.src = 'images/body.png';
+    this.appleImg = new Image();
+    this.appleImg.src = 'images/apple.png';
+    this.taleImg = new Image();
+    this.taleImg.src = 'images/tale.png';
     this.snakeCoord = {
         x: 0,
-        y: 0
+        y: 0,
+        dir: this.dir
     };
     this.newPosApple = true;
     this.apple = ['x','y'];
     this.pause = false;
     this.over = false;
     this.gameOverText = {
-        text: 'Game Over',
+        text: 'Game over',
         draw: false,
     };
     this.pauseText = {
@@ -38,10 +47,12 @@ var Game = function(name){
         text: 'Score ',
         draw: false,
     };
+    this.style = 'image';
+    this.strokeField = false;
 
     var game = this;
     game.canvas.width = game.width;
-    game.canvas.height = game.width + game.indent;
+    game.canvas.height = game.height + game.indent;
 
     /*metods*/
 
@@ -72,9 +83,11 @@ var Game = function(name){
 
     this.drawSnake = function(){
         var i;
+        game.snake[0].dir = game.dir;
         for(i = game.num - 1; i > 0; --i){
             game.snake[i].x = game.snake[i - 1].x;
             game.snake[i].y = game.snake[i - 1].y;
+            game.snake[i].dir = game.snake[i - 1].dir;
         }
         if(game.dir == 0){
             game.snake[0].x -= 1;
@@ -101,6 +114,7 @@ var Game = function(name){
             };
             game.snake[game.num - 1].x = game.snake[game.num - 2].x;
             game.snake[game.num - 1].y = game.snake[game.num - 2].y;
+            game.snake[game.num - 1].dir = game.snake[game.num - 2].dir;
             game.newPosApple = true;
         }
         else if(game.snake[0].x == game.n || game.snake[0].x == -1 || game.snake[0].y == -1 || game.snake[0].y == game.m){
@@ -113,28 +127,75 @@ var Game = function(name){
                 }
             }
         }
-        
-        for(var i = 0; i < game.num; i++){
-            game.context.strokeStyle = '#0000ff';
-            if(i == 0){
-                game.context.strokeStyle = '#ff0000';
-            }
-            game.context.strokeRect(game.snake[i].x * game.scale, game.snake[i].y * game.scale, game.scale, game.scale);
+
+        if(game.style == 'image'){
+            game.context.save();
+            game.context.translate(game.scale / 2, game.scale / 2);
         }
+
+        for(var i = 0; i < game.num; i++){
+
+            if(game.style == 'color'){
+                game.context.fillStyle = '#feaa60';
+            }
+            else if(game.style == 'image'){
+                var image = game.snakeBody;
+            }
+
+            if(i == 0){
+                if(game.style == 'color'){
+                    game.context.fillStyle = '#ff4d77';
+                }
+                else if(game.style == 'image'){
+                    image = game.snakeHead;
+                }
+            }
+            else if(i == game.num - 1){
+                image = game.taleImg;
+            }
+
+            if(game.style == 'color'){
+                game.context.fillRect(game.snake[i].x * game.scale, game.snake[i].y * game.scale, game.scale, game.scale);
+            }
+            else if(game.style == 'image'){
+                if(game.snake[i].dir == 0){
+                    game.context.rotate(18 * Math.PI / 180);
+                }
+                else if(game.snake[i].dir == 1){
+                    game.context.rotate(27 * Math.PI / 180);
+                }
+                else if(game.snake[i].dir == 2){
+                    game.context.rotate(0 * Math.PI / 180);
+                }
+                else if(game.snake[i].dir == 3){
+                    game.context.rotate(9 * Math.PI / 180);
+                }
+                game.context.drawImage(image, game.snake[i].x * game.scale, game.snake[i].y * game.scale);
+            }
+        }
+        if(game.style == 'image'){
+            game.context.restore();
+        }
+        console.log(game.snake[game.num - 1]);
     }
 
     this.drawField = function(){
+        game.context.fillStyle = '#ffffff';
+        game.context.fillRect(0, 0, game.width, game.height);
         var i,j;
-        game.context.strokeStyle = '#00ff00';
-        for (i = 0; i <= this.w; i += this.scale){
-            game.context.moveTo(i,0);
-            game.context.lineTo(i,this.h);
+        if(game.strokeField){
+            game.context.strokeStyle = '#9ed556';
+            for (i = 0; i <= this.w; i += this.scale){
+                game.context.moveTo(i,0);
+                game.context.lineTo(i,this.h);
+            }
+            for (j = 0; j <= this.h; j += this.scale) {
+                game.context.moveTo(0,j);
+                game.context.lineTo(this.w,j);
+            }
+            game.context.stroke();
+            game.context.strokeRect(0,0,game.width, game.height);
         }
-        for (j = 0; j <= this.h; j += this.scale) {
-            game.context.moveTo(0,j);
-            game.context.lineTo(this.w,j);
-        }
-        game.context.stroke();
     };
 
     this.drawApple = function(){
@@ -143,8 +204,13 @@ var Game = function(name){
             this.apple.y = Math.random() * this.m | 0;
             game.newPosApple = false;
         }
-        game.context.fillStyle = '#ff0000';
-        game.context.fillRect(parseInt(this.apple.x) * this.scale, parseInt(this.apple.y) * this.scale, this.scale, this.scale);
+        if(game.style == 'color'){
+            game.context.fillStyle = '#ff0000';
+            game.context.fillRect(parseInt(game.apple.x) * game.scale, parseInt(game.apple.y) * game.scale, game.scale, game.scale);
+        }
+        else if(game.style == 'image'){
+            game.context.drawImage(game.appleImg, parseInt(game.apple.x) * game.scale, parseInt(game.apple.y) * game.scale);
+        }
     };
 
     this.reset = function(){
@@ -185,9 +251,9 @@ var Game = function(name){
             this.drawField();
             this.drawSnake();
             this.drawApple();
-            game.scoreText.text = 'Score ' + game.score;
+            game.scoreText.text = 'Score: ' + game.score;
             game.scoreText.textBaseline = 'top';
-            this.drawText(this.scoreText,null,510);
+            this.drawText(this.scoreText,null,game.height + 10);
             game.scoreText.draw = false;
         }
         else if(game.pause && !game.over){
@@ -223,7 +289,7 @@ var Game = function(name){
         else if(event.keyCode == 40 && game.dir != 1){
             game.dir = 3;
         }
-        else if(event.keyCode == 27){
+        else if(event.keyCode == 27 || event.keyCode == 32){
             game.pause = true;
         }
         else if(event.keyCode == 13){
