@@ -1,4 +1,4 @@
 # snake
 
-#esc - pause game;
+#esc - pause game;<br>
 #enter - continue game;
