@@ -236,6 +236,44 @@ var Game = function(name){
         }
     };
 
+    document.addEventListener('touchstart', handleTouchStart, false);        
+    document.addEventListener('touchmove', handleTouchMove, false);
+
+    var xDown = null;                                                        
+    var yDown = null;                                                        
+
+    function handleTouchStart(evt) {                                         
+        xDown = evt.touches[0].clientX;                                      
+        yDown = evt.touches[0].clientY;                                      
+    };                                                
+
+    function handleTouchMove(evt) {
+        if ( ! xDown || ! yDown ) {
+            return;
+        }
+        var xUp = evt.touches[0].clientX;                                    
+        var yUp = evt.touches[0].clientY;
+
+        var xDiff = xDown - xUp;
+        var yDiff = yDown - yUp;
+
+        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+            if ( xDiff > 0 ) {
+                game.dir = 0;
+            } else {
+                game.dir = 2;
+            }                       
+        } else {
+            if ( yDiff > 0 ) {
+                game.dir = 1;
+            } else { 
+                game.dir = 3;
+            }                                                                 
+        }
+        xDown = null;
+        yDown = null;                                             
+    };
+
     this.gameEngineStart = function(callback){
         if(typeof callback == 'undefined'){
             callback = game.drawGame;
