@@ -7,3 +7,4 @@
 #↓ - down <br>
 #esc - pause game; <br>
 #enter - continue game;
+<hr>

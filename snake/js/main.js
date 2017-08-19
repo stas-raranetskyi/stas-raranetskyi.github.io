@@ -1,5 +1,3 @@
-/*cash images snake*/
-
 
 var Game = function(name){
 
@@ -48,6 +46,7 @@ var Game = function(name){
     this.strokeField = false;
 
     if(this.style == 'image'){
+        /*cash images snake*/
         this.snakeImages = {};
         for(var i = 0; i < 4; i++){
             this.snakeImages[i] = [];
