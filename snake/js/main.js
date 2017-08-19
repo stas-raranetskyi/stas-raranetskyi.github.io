@@ -1,18 +1,5 @@
 /*cash images snake*/
 
-var snakeImages = {};
-for(var i = 0; i < 4; i++){
-    snakeImages[i] = [];
-    var image = new Image();
-    image.src = 'images/head-' + i + '.png';
-    snakeImages[i].push(image);
-    image = new Image();
-    image.src = 'images/body-' + i + '.png';
-    snakeImages[i].push(image);
-    image = new Image();
-    image.src = 'images/tale-' + i + '.png';
-    snakeImages[i].push(image);
-}
 
 var Game = function(name){
 
@@ -59,6 +46,22 @@ var Game = function(name){
     };
     this.style = 'image';
     this.strokeField = false;
+
+    if(this.style == 'image'){
+        this.snakeImages = {};
+        for(var i = 0; i < 4; i++){
+            this.snakeImages[i] = [];
+            var image = new Image();
+            image.src = 'images/head-' + i + '.png';
+            this.snakeImages[i].push(image);
+            image = new Image();
+            image.src = 'images/body-' + i + '.png';
+            this.snakeImages[i].push(image);
+            image = new Image();
+            image.src = 'images/tale-' + i + '.png';
+            this.snakeImages[i].push(image);
+        }
+    }
 
     var game = this;
     game.canvas.width = game.width;
@@ -145,19 +148,20 @@ var Game = function(name){
                 game.context.fillStyle = '#feaa60';
             }
             else if(game.style == 'image'){
-                var image = snakeImages[game.snake[i].dir][1];
+                var image = game.snakeImages[game.snake[i].dir][1];
             }
 
-            if(i == 0 || i == 1){
-                if(game.style == 'color'){
+            if(game.style == 'color'){
+                if(i == 0){
                     game.context.fillStyle = '#ff4d77';
                 }
-                else if(game.style == 'image'){
-                    image = snakeImages[game.snake[i].dir][0];
+            }else if(game.style == 'image'){
+                if(i == 0 || i == 1){
+                    image = game.snakeImages[game.snake[i].dir][0];
                 }
-            }
-            else if(i == game.num - 1){
-                image = snakeImages[game.snake[i].dir][2];
+                else if(i == game.num - 1){
+                    image = game.snakeImages[game.snake[i].dir][2];
+                }
             }
 
             if(game.style == 'color'){
