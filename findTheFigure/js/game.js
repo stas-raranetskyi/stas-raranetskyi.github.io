@@ -1,7 +1,7 @@
 
 var Game = function(){
 
-	var sizeFacet = parseInt(width / 6);
+	var sizeFacet = parseInt(width / 8);
 	var objFigure = {
 		0: game.newRectObject({
 			w: sizeFacet,
