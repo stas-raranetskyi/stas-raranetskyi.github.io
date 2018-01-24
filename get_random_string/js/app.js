@@ -24,7 +24,7 @@ var App = (function() {
                 return true;
             return false;
         },
-        concat: function () {
+        getStrRand: function () {
             var newArr = stringVal.split('\n'),
                 that = this;
             newArr.map(function(currentValue, index, array){
@@ -34,6 +34,7 @@ var App = (function() {
             });
             var len = newArr.length,
                 randNumb = this.getRandomInt(0, len);
+            console.log(len);
             getById('result').innerHTML = newArr[randNumb];
         },
         run: function(){
@@ -41,7 +42,7 @@ var App = (function() {
                 return false;
             }
             this.setStringVal();
-            this.concat();
+            this.getStrRand();
         }
     }
 }());
