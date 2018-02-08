@@ -15,3 +15,29 @@ var getByAttr = function(attr,name){
 	return result;
 
 }
+
+elements = document.querySelectorAll('.js-type');
+
+elements.forEach(function(item){
+    item.onchange = function(){
+        var type = this.dataset.type,
+            segms = document.querySelectorAll('.segm-block'),
+            strs = document.querySelectorAll('.str-block');
+        if(type == 'segm-title'){
+            segms.forEach(function(segm){
+                segm.classList.remove('hide');
+            });
+            strs.forEach(function(str){
+                str.classList.add('hide');
+            });
+        }
+        else if(type == 'str-title'){
+            segms.forEach(function(segm){
+                segm.classList.add('hide');
+            });
+            strs.forEach(function(str){
+                str.classList.remove('hide');
+            });
+        }
+    };
+});

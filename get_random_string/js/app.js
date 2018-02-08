@@ -1,18 +1,30 @@
 var App = (function() {
-    var stringVal,
-        stringValId = 'your-string-val',
+    var dataVal,
+        strValId = 'your-string-val',
+        segmValId = 'your-segment-val',
+        type,
         state = true;
     return {
         getRandomInt: function(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         },
-        getStringVal: function () {
-            return stringVal;
+        getdataVal: function () {
+            return dataVal;
         },
-        setStringVal: function(){
-            stringVal = getById(stringValId).value;
-            if(stringVal.length < 1){
-                alert("Введите строку");
+        setdataVal: function(){
+            type = document.querySelector('.js-type:checked').dataset.type;
+            if(type == 'segm-title'){
+                dataVal = getById(segmValId).value;
+                console.log(1);
+            }
+            else if(type == 'str-title'){
+                dataVal = getById(strValId).value;
+                console.log(2);
+            }
+
+            console.log(getById(segmValId));
+            if(dataVal.length < 1){
+                alert("Input data");
                 state = false;
             }
             else{
@@ -24,25 +36,37 @@ var App = (function() {
                 return true;
             return false;
         },
-        getStrRand: function () {
-            var newArr = stringVal.split('\n'),
-                that = this;
-            newArr.map(function(currentValue, index, array){
-                if(that.isEmpty(currentValue)){
-                    newArr.splice(index, 1);
-                }
-            });
-            var len = newArr.length,
-                randNumb = this.getRandomInt(0, len);
-            console.log(len);
-            getById('result').innerHTML = newArr[randNumb];
+        getRand: function () {
+
+            var that = this;
+            if(type == 'segm-title'){
+                dataVal = getById(segmValId).value;
+                var newArr = dataVal.split('-'),
+                    randNumb = this.getRandomInt(parseInt(newArr[0]), parseInt(newArr[1]));
+
+                getById('result').innerHTML = randNumb;
+            }
+            else if(type == 'str-title'){
+                dataVal = getById(strValId).value;
+                var newArr = dataVal.split('\n');
+
+                newArr.map(function(currentValue, index, array){
+                    if(that.isEmpty(currentValue)){
+                        newArr.splice(index, 1);
+                    }
+                });
+                var len = newArr.length,
+                    randNumb = this.getRandomInt(0, len);
+                console.log(len);
+                getById('result').innerHTML = newArr[randNumb];
+            }
         },
         run: function(){
             if(!state){
                 return false;
             }
-            this.setStringVal();
-            this.getStrRand();
+            this.setdataVal();
+            this.getRand();
         }
     }
 }());

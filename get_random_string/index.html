@@ -3,17 +3,34 @@
 <head>
     <meta charset="utf-8">
     <link href="fav.ico" rel="shortcut icon">
-    <title>Get random string</title>
+    <title>Get random data</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <form action="#" class="form-app">
-        <h1 class="title-page">Get random string</h1>
 
-        <div class="row your-string">
+        <div>
+            <input type="radio" id="str-input" name="type" checked data-type="str-title" class="js-type"/>
+            <label for="str-input">String</label>
+        </div>
+
+        <div>
+            <input type="radio" id="segm-input" name="type" data-type="segm-title" class="js-type"/>
+            <label for="segm-input">Segment</label>
+        </div>
+
+        <h1 class="title-page str-block">Get random string</h1>
+        <h1 class="title-page segm-block hide">Get random number</h1>
+
+        <div class="row your-string str-block" id="your-string">
             <label for="your-string-val">Your string</label>
             <textarea id="your-string-val" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="row your-string segm-block hide" id="your-segment">
+            <label for="your-segment-val">Your segment</label>
+            <input type="text" id="your-segment-val"/>
         </div>
 
         <div class="row result">
