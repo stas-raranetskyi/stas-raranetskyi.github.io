@@ -1,0 +1,29 @@
+{
+    "all": {
+        "title": "All"
+    },
+    "website": {
+        "title": "WebSite",
+        "works": {
+            "title": "White web",
+            "image": "white-web.jpg",
+            "link": "white-web/"
+        }
+    },
+    "landing": {
+        "title": "Landing",
+        "works": {
+            "title": "White web",
+            "image": "white-web.jpg",
+            "link": "white-web/"
+        }
+    },
+    "raphael": {
+        "title": "Raphael.js",
+        "works": {
+            "title": "White web",
+            "image": "white-web.jpg",
+            "link": "white-web/"
+        }
+    }
+}
