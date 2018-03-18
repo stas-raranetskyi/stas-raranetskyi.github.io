@@ -15,14 +15,11 @@ var App = (function() {
             type = document.querySelector('.js-type:checked').dataset.type;
             if(type == 'segm-title'){
                 dataVal = getById(segmValId).value;
-                console.log(1);
             }
             else if(type == 'str-title'){
                 dataVal = getById(strValId).value;
-                console.log(2);
             }
 
-            console.log(getById(segmValId));
             if(dataVal.length < 1){
                 alert("Input data");
                 state = false;
@@ -74,4 +71,9 @@ var App = (function() {
 
 getById("run").onclick = function(){
     App.run();
+}
+
+getById("form-app").onsubmit = function(){
+    App.run();
+    return false;
 }
