@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Regular expressions</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+        .fs22 {
+            font-size: 22px !important;
+        }
+        .fs20 {
+            font-size: 20px !important;
+        }
+        .fs18 {
+            font-size: 18px !important;
+        }
+        .fs16 {
+            font-size: 16px !important;
+        }
+        .fs14 {
+            font-size: 14px !important;
+        }
+        .m0 {
+            margin: 0 !important;
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Регулярные выражения в js</h1>
+        <p>Stas Raranetskyi</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Регулярные выражения в js</h2>
+        <p>Stas Raranetskyi</p>
+        <figure>
+            <img class="cover" src="pictures/1.jpg" alt="">
+        </figure>
+        <style>
+            #cover h2 {
+                margin: 170px 0 0;
+                color: white;
+                text-align: center;
+                font-size: 70px;
+                text-shadow: 0 0 15px black;
+                letter-spacing: 4px;
+            }
+
+            #cover p {
+                margin: 10px 0 0;
+                text-align: center;
+                color: white;
+                font-style: italic;
+                font-size: 20px;
+            }
+
+            #cover p a {
+                color: white;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Применение</h2>
+        <ol>
+            <li>консольные утилиты Unix и др</li>
+            <li>работа со строками в языках программирования</li>
+            <li>работа с текстом в текстовых редакторах и IDE</li>
+            <li>"стандарт" для описания поискового шаблона</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Синтаксис</h2>
+        <p>
+            Регулярное выражение можно создать двумя способами:
+        </p>
+        <ul>
+            <li>
+                Используя литерал регулярного выражения:<br>
+                <code>const regexp = /шаблон/флаги;</code>
+            </li>
+            <li>
+                Вызывая функцию конструктор объекта <code>RegExp</code>:<br>
+                <code>const regexp = new RegExp('шаблон','флаги');</code>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">Работа с Регулярными Выражениями</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Методы String</h2>
+        <ul>
+            <li>
+                <code>search</code> - ищет на совпадение в строке. Возвращет индекс совпадения, или -1 если совпадений не будет найдено.
+            </li>
+            <li class="next">
+                <code>replace</code> - выполняет поиск совпадения в строке, и заменяет совпавшую подстроку другой подстрокой переданной как аргумент в этот метод.
+            </li>
+            <li class="next">
+                <code>split</code> - использует регулярное выражение или фиксированую строку чтобы разбить строку на массив подстрок.
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Методы RegExp</h2>
+        <ul>
+            <li>
+                <code>test</code> - ищет совпадение в строке. Возвращет <code>true/false</code>.
+            </li>
+            <li class="next">
+                <code>match</code> - выполняет поиск совпадения в строке. Возвращет массив данных либо <code>null</code> если совпадения отсутствуют.
+            </li>
+            <li class="next">
+                <code>exec</code> - выполняет поиск совпадения в строке. Возвращает массив данных. Можно задать стартовую позицию поиска.
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Использование</h2>
+        <pre style="margin: 0;">
+            <code>const str = 'Я люблю JavaScript!';</code>
+            <code>const regexp = /лю/;</code>
+            <code>alert(str.search(regexp)); // 2</code>
+        </pre>
+        <p style="margin: 0;">Аналогично</p>
+        <pre>
+            <code>const str = 'Я люблю JavaScript!';</code>
+            <code>const substr = 'лю';</code>
+            <code>alert(str.indexOf(regexp)); // 2</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Флаги</h2>
+        <ul>
+            <li>
+                <code>i</code> - регистронезависимый поиск, то есть не различает между <code>А</code> и <code>а</code>.
+            </li>
+            <li class="next">
+                <code>g</code> - глобальный поиск, то есть будет искать все совпадения.
+            </li>
+            <li class="next">
+                <code>m</code> - многострочный поиск. Говорит сам за себя.)
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">Классы символов</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Важнейшие классы:</h2>
+        <ul>
+            <li>
+                <code>\d</code> - цифра, символ от 0 до 9.
+            </li>
+            <li>
+                <code>\w</code> - буква латинского алфавита или цифра или подчёркивание '_'.
+            </li>
+            <li>
+                <code>\s</code> - пробельный символ, включая табы, переводы строки и т.п.
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Граница слова</h2>
+        <p style="margin-bottom: 0">
+            <code>\b</code> - обозначает не символ, а границу между символами.
+            <br>Граница имеет "нулевую ширину"
+        </p>
+        Условия:
+        <ul>
+            <li>
+                Начало текста, если первый символ \w
+            </li>
+            <li>
+                Конец текста, если последний символ \w.
+            </li>
+            <li>
+                Внутри текста, если с одной стороны \w, а с другой – не \w.
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Обратные классы</h2>
+        <ul>
+            <li>
+                <code>\D</code> - не цифра, то есть любой символ кроме <code>\d</code>, например буква.
+            </li>
+            <li>
+                <code>\W</code> - любой символ, кроме <code>\w</code>, то есть не латинница, не подчёркивание, не цифра. В частности, русские буквы принадлежат этому классу.
+            </li>
+            <li>
+                <code>\S</code> - не пробел, то есть любой символ кроме <code>\s</code>, например буква.
+            </li>
+            <li>
+                <code>\B</code> - проверка, обратная <code>\b</code>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Пробелы – обычные символы!</h2>
+        <p>
+            В регулярных выражениях пробел – такой же символ, как и другие. Если регэксп не учитывает пробелов, то он не сработает.
+        </p>
+    </section>
+
+    <section class="slide" style="padding-right: 50px">
+        <h2>Квантификаторы +, *, ? и {n}</h2>
+        <p style="line-height: 1.1">
+            Квантификаторы - это количество повторений символа или группы символов
+        </p>
+        <ul class="fs18">
+            <li>
+                <code>{n}</code> - точное количество n. <code class="fs14">alert('1 23 456'.match(/\d{2}/)); <span class="comment">// '23'</span></code>
+            </li>
+            <li>
+                <code>{n, m}</code> - количество от n до m. <code class="fs14">alert('1 23 456'.match(/\d{2,3}/g)); <span class="comment">// '23','456'</span></code>
+            </li>
+            <li>
+                <code>{n,}</code> - количество n и более. <code class="fs14">alert('1 23 456 7890'.match(/\d{3,}/g)); <span class="comment">// '456','7890'</span></code>
+            </li>
+            <li>
+                <code>+</code> - один или более, то же самое что {1, }.<code class="fs14">alert('1 10 100'.match(/\d0+/g)); <span class="comment">// '10','100'</span></code>
+            </li>
+            <li>
+                <code>*</code> - 0 или более, то же самое что {0, }. <code class="fs14">alert('1 10 100'.match(/\d0*/g)); <span class="comment">// '1', '10','100'</span></code>
+            </li>
+            <li>
+                <code>?</code> - 0 или 1, то же самое что {0, 1}. <code class="fs14">alert('color или colour'.match(/colou?r/g)); <span class="comment">// 'color', 'colour'</span></code>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Начало и конец строки</h2>
+        <p style="font-size: 24px">
+            Как и граница слова имеют "нулевую ширину", то есть являются проверкой.
+            <br>При включенном многострочном режиме якоря означают не только начало/конец текста, но и начало/конец строки.
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Начало строки</h2>
+        <p>
+            Обнозначается символом <code>^</code>
+        </p>
+        <pre style="font-size: 24px">
+            <code>const str = '100500 правок по задаче лучше чем 500100';</code>
+            <code>console.log(str.match(/^\d+/g)); <span class="comment">// ['100500']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Конец строки</h2>
+        <p>
+            Обнозначается символом <code>$</code>
+        </p>
+        <pre style="font-size: 24px">
+            <code>const str = '100500 правок по задаче лучше чем 500100';</code>
+            <code>console.log(str.match(/\d+$/g)); <span class="comment">// ['500100']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Наборы</h2>
+        <p>
+            Если в регулярном выражении несколько символов или символьных классов заключены в квадратные скобки […], то это
+            означает "искать любой символ из указанных в […]".
+            <br>Например, [abc] означает любой символ из этих трёх: 'a', 'b', или 'c'.
+        </p>
+        <pre style="font-size: 24px">
+            <code>const str = 'font-size: 24; font-size: 34;';</code>
+            <code>console.log(str.match(/[23]\d/g)); <span class="comment">// ['24', '34']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Диапазоны</h2>
+        <p>
+            Квадратные скобки могут также содержать диапазоны символов.
+            <br/>Например, [a-z] – произвольный символ от a до z, [0-9] – цифра от 0 до 9.
+        </p>
+        <pre style="font-size: 24px">
+            <code>const str = '100500 правок по задаче лучше чем 500100';</code>
+            <code>console.log(str.match(/[0-9]+/g)); <span class="comment">// ['100500', '500100']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Диапазоны «кроме»</h2>
+        <p>
+            Кроме обычных, существуют также исключающие диапазоны: [^…].
+            <br/>Квадратные скобки, начинающиеся со знака каретки: [^…] находят любой символ, кроме указанных.
+        </p>
+        <pre style="font-size: 24px">
+            <code>const str = '+38 (099) 123-45-67';</code>
+            <code>console.log(str.replace(/[^0-9]+/g, '')); <span class="comment">// 380991234567</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Скобочные группы</h2>
+        <p class="fs18 m0">
+            Часть шаблона может быть заключена в скобки (...). Такие выделенные части шаблона называют «скобочными выражениями» или
+            «скобочными группами».
+            <br>У такого выделения есть два эффекта:
+        </p>
+        <ul class="fs18">
+            <li>
+                Он позволяет выделить часть совпадения в отдельный элемент массива при поиске через String#match или RegExp#exec.
+            </li>
+            <li>
+                Если поставить квантификатор после скобки, то он применится ко всей скобке, а не всего лишь к одному символу.
+            </li>
+        </ul>
+        <pre class="fs18">
+            <code>const str = 'Gogogo now!';</code>
+            <code>console.log(str.match(/(go)+/i)); <span class="comment">// ['Gogogo', 'go']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Скобочные группы</h2>
+        <p class="m0">
+            Если не надо включать содержимое группы в результат её можно исключть с помощью <code>?:</code> или задействовать флаг <code>g</code>
+        </p>
+        <pre>
+            <code>const str = 'Gogogo now!';</code>
+            <code>console.log(str.match(/(?:go)+/i)); <span class="comment">// ['Gogogo']</span></code>
+            <code>console.log(str.match(/(go)+/ig)); <span class="comment">// ['Gogogo']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">Обратные ссылки</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Группа в строке замены</h2>
+        <p class="fs20 m0">
+            Скобочные группы можно не только получать в результате.
+            <br/>Движок регулярных выражений запоминает их содержимое, и затем его можно использовать как в самом паттерне, так и в
+            строке замены.
+        </p>
+        <pre class="fs20">
+            <code>const name = 'Stas Raranetskyi';</code>
+            <code>const regexp = /([a-z]+) ([a-z]+)/gi;</code>
+            <code>console.log(name.replace(regexp, '$2 $1')); <span class="comment">// 'Raranetskyi Stas'</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Группа в шаблоне</h2>
+        <p class="m0">
+            Пример использования скобочной группы в шаблоне:
+        </p>
+        <pre class="fs22">
+            <code>const str = '&lt;h1&gt;Hello, world!&lt;/h1&gt;';</code>
+            <code>const regexp = /&lt;([a-z0-9]+)&gt;.*&lt;\/\1&gt;/gi;</code>
+            <code>console.log(str.match(regexp)); <span class="comment">// ['&lt;h1&gt;Hello, world!&lt;/h1&gt;']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Альтернация</h2>
+        <p class="m0">
+            Альтернация – термин в регулярных выражениях, которому в русском языке соответствует слово «ИЛИ». Она обозначается
+            символом вертикальной черты | и позволяет выбирать между вариантами.
+        </p>
+        <pre class="fs22">
+            <code>const str = 'html, css, js - основа всей веб-разработки';</code>
+            <code>const regexp = /html|css|js/gi;</code>
+            <code>console.log(str.match(regexp)); <span class="comment">// ['html', 'css', 'js']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">Просмотр вперёд и назад</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Позитивный просмотр вперёд</h2>
+        <p class="m0">
+            <code>(?=pattern)</code>
+        </p>
+        <pre class="fs22">
+            <code>const str = 'ЛюдовикXV, КарлXVI, ФридрихXVIII, ЕкатеринаLXVII';</code>
+            <code>const regexp = /[а-яё]+(?=LX)/gi;</code>
+            <code>console.log(str.match(regexp)); <span class="comment">// ['Екатерина']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Негативный просмотр вперёд</h2>
+        <p class="m0">
+            <code>(?!pattern)</code>
+        </p>
+        <pre class="fs22">
+            <code>const str = 'ЛюдовикXV, КарлXVI, ФридрихXVIII, ЕкатеринаLXVII';</code>
+            <code>const regexp = /[а-яё]+(?!LX)\b/gi;</code>
+            <code>console.log(str.match(regexp)); <span class="comment">// ['Людовик', 'Карл', 'Фридрих']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Позитивный просмотр назад</h2>
+        <p class="m0">
+            <code>(?<=pattern)</code>
+        </p>
+        <pre class="fs22">
+            <code>const str = '$110, 150, $200, 300, $350, 400';</code>
+            <code>const regexp = /(?<=\$)\d+/gi;</code>
+            <code>console.log(str.match(regexp)); <span class="comment">// ['110', '200', '350']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Негативный просмотр назад</h2>
+        <p class="m0">
+            <code>(?&lt;!pattern)</code>
+        </p>
+        <pre class="fs22">
+            <code>const str = '$110, 150, $200, 300, $350, 400';</code>
+            <code>const regexp = /\b(?&lt;!\$)\d+\b/gi;</code>
+            <code>console.log(str.match(regexp)); <span class="comment">// ['150', '300', '400']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">Примеры</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Пример 1</h2>
+        <p class="fs22">
+            Получить число из разметки
+            <img src="pictures/Screenshot_1.png" alt="" style="position: relative; top: 7px">
+        </p>
+        <pre class="fs18">
+            <code>const str = '&lt;span&gt;60 755&lt;span&gt;,63 руб';</code>
+            <code>const regexp = /[^0-9,-]+/ig;</code>
+            <code>const newStr = str.replace(regexp, '');</code>
+            <code>const number = Number(newStr.replace(',','.'))</code>
+            <code>console.log(number); <span class="comment">// 60755.63</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Пример 2</h2>
+        <p class="fs22">
+            Найти HTML-комментарии в тексте
+        </p>
+        <pre class="fs18">
+            <code>const str = '.. &lt;!-- Тестовый комментарий --&gt; ..  &lt;!----&gt; .. ';</code>
+            <code>const regexp = /&lt;!--[\s\S]*?--&gt;/g;</code>
+            <code>console.log(str.match(regexp)); <span class="comment">// '&lt;!-- Тестовый комментарий --&gt;', '&lt;!----&gt;'</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Пример 3</h2>
+        <p class="fs22">
+            Найти названия html или htm файлов.
+        </p>
+        <pre class="fs18">
+            <code>const str = 'https://www.my-site.ru/category/subcategory/index_1.html';</code>
+            <code>const regexp = /[\w-]+\.html?$/g;</code>
+            <code>console.log(str.match(regexp)); <span class="comment">// ['index_1.html']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Пример 3</h2>
+        <p class="fs22">
+            Найти id аптеки в адресной строке
+        </p>
+        <pre class="fs18">
+            <code>const str = 'https://www.asna.ru/cart/pharmacies/1234/order/123/';</code>
+            <code>const regexp = /(?<=pharmacies\/)\d+/g;</code>
+            <code>console.log(str.match(regexp)); <span class="comment">// ['1234']</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Пример 3</h2>
+        <p>
+            В Firefox не арбайнет!
+        </p>
+        <img src="pictures/Screenshot_2.png" alt="">
+    </section>
+    <section class="slide">
+        <h2>Пример 3</h2>
+        <p class="fs22">
+            Найти id аптеки в адресной строке
+        </p>
+        <pre class="fs18">
+            <code>const str = 'https://www.asna.ru/cart/pharmacies/1234/order/123/';</code>
+            <code>const regexp = /pharmacies\/(\d+)/g;</code>
+            <code>const match = str.match(regexp);</code>
+            <code>console.log(match); <span class="comment">// ['pharmacies/1234']</span></code>
+            <code>const res = match ? Number(match[0].replace(/[^0-9]/g, '')) : -1</code>
+            <code>console.log(res); <span class="comment">// 1234</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout"><a href="https://regex101.com/" target="_blank">regex101.com</a></h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Спасибо</h2>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+    <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
