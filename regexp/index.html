@@ -109,6 +109,9 @@
             <li class="next">
                 <code>split</code> - использует регулярное выражение или фиксированую строку чтобы разбить строку на массив подстрок.
             </li>
+            <li class="next">
+                <code>match</code> - выполняет поиск совпадения в строке. Возвращет массив данных либо <code>null</code> если совпадения отсутствуют.
+            </li>
         </ul>
     </section>
 
@@ -117,9 +120,6 @@
         <ul>
             <li>
                 <code>test</code> - ищет совпадение в строке. Возвращет <code>true/false</code>.
-            </li>
-            <li class="next">
-                <code>match</code> - выполняет поиск совпадения в строке. Возвращет массив данных либо <code>null</code> если совпадения отсутствуют.
             </li>
             <li class="next">
                 <code>exec</code> - выполняет поиск совпадения в строке. Возвращает массив данных. Можно задать стартовую позицию поиска.
@@ -138,7 +138,7 @@
         <pre>
             <code>const str = 'Я люблю JavaScript!';</code>
             <code>const substr = 'лю';</code>
-            <code>alert(str.indexOf(regexp)); // 2</code>
+            <code>alert(str.indexOf(substr)); // 2</code>
         </pre>
     </section>
 
