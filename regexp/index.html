@@ -72,7 +72,7 @@
             <li>консольные утилиты Unix и др</li>
             <li>работа со строками в языках программирования</li>
             <li>работа с текстом в текстовых редакторах и IDE</li>
-            <li>"стандарт" для описания поискового шаблона</li>
+            <li style="text-decoration: line-through">"стандарт" для описания поискового шаблона</li>
         </ol>
     </section>
 
@@ -339,27 +339,24 @@
     <section class="slide">
         <h2>Скобочные группы</h2>
         <p class="m0">
-            Если не надо включать содержимое группы в результат её можно исключть с помощью <code>?:</code> или задействовать флаг <code>g</code>
+            Если не надо включать содержимое группы в результат её можно исключить с помощью <code>?:</code>
         </p>
         <pre>
             <code>const str = 'Gogogo now!';</code>
             <code>console.log(str.match(/(?:go)+/i)); <span class="comment">// ['Gogogo']</span></code>
-            <code>console.log(str.match(/(go)+/ig)); <span class="comment">// ['Gogogo']</span></code>
         </pre>
     </section>
 
     <section class="slide">
-        <h2 class="shout shrink">Обратные ссылки</h2>
+        <h2 class="shout shrink">Обратные ссылки <code>$n</code> <code>\n</code></h2>
     </section>
 
     <section class="slide">
         <h2>Группа в строке замены</h2>
-        <p class="fs20 m0">
-            Скобочные группы можно не только получать в результате.
-            <br/>Движок регулярных выражений запоминает их содержимое, и затем его можно использовать как в самом паттерне, так и в
-            строке замены.
+        <p class="m0">
+            Пример использования:
         </p>
-        <pre class="fs20">
+        <pre class="fs22">
             <code>const name = 'Stas Raranetskyi';</code>
             <code>const regexp = /([a-z]+) ([a-z]+)/gi;</code>
             <code>console.log(name.replace(regexp, '$2 $1')); <span class="comment">// 'Raranetskyi Stas'</span></code>
@@ -369,7 +366,7 @@
     <section class="slide">
         <h2>Группа в шаблоне</h2>
         <p class="m0">
-            Пример использования скобочной группы в шаблоне:
+            Пример использования:
         </p>
         <pre class="fs22">
             <code>const str = '&lt;h1&gt;Hello, world!&lt;/h1&gt;';</code>
@@ -398,7 +395,7 @@
     <section class="slide">
         <h2>Позитивный просмотр вперёд</h2>
         <p class="m0">
-            <code>(?=pattern)</code>
+            <code>pattern(?=condition)</code>
         </p>
         <pre class="fs22">
             <code>const str = 'ЛюдовикXV, КарлXVI, ФридрихXVIII, ЕкатеринаLXVII';</code>
@@ -410,11 +407,11 @@
     <section class="slide">
         <h2>Негативный просмотр вперёд</h2>
         <p class="m0">
-            <code>(?!pattern)</code>
+            <code>pattern(?!condition)</code>
         </p>
         <pre class="fs22">
             <code>const str = 'ЛюдовикXV, КарлXVI, ФридрихXVIII, ЕкатеринаLXVII';</code>
-            <code>const regexp = /[а-яё]+(?!LX)\b/gi;</code>
+            <code>const regexp = /[а-яё]+(?!LX)\b/g;</code>
             <code>console.log(str.match(regexp)); <span class="comment">// ['Людовик', 'Карл', 'Фридрих']</span></code>
         </pre>
     </section>
@@ -422,11 +419,11 @@
     <section class="slide">
         <h2>Позитивный просмотр назад</h2>
         <p class="m0">
-            <code>(?<=pattern)</code>
+            <code>(?<=condition)pattern</code>
         </p>
         <pre class="fs22">
             <code>const str = '$110, 150, $200, 300, $350, 400';</code>
-            <code>const regexp = /(?<=\$)\d+/gi;</code>
+            <code>const regexp = /(?<=\$)\d+/g;</code>
             <code>console.log(str.match(regexp)); <span class="comment">// ['110', '200', '350']</span></code>
         </pre>
     </section>
@@ -434,11 +431,11 @@
     <section class="slide">
         <h2>Негативный просмотр назад</h2>
         <p class="m0">
-            <code>(?&lt;!pattern)</code>
+            <code>(?&lt;!condition)pattern</code>
         </p>
         <pre class="fs22">
             <code>const str = '$110, 150, $200, 300, $350, 400';</code>
-            <code>const regexp = /\b(?&lt;!\$)\d+\b/gi;</code>
+            <code>const regexp = /\b(?&lt;!\$)\d+\b/g;</code>
             <code>console.log(str.match(regexp)); <span class="comment">// ['150', '300', '400']</span></code>
         </pre>
     </section>
@@ -455,7 +452,7 @@
         </p>
         <pre class="fs18">
             <code>const str = '&lt;span&gt;60 755&lt;span&gt;,63 руб';</code>
-            <code>const regexp = /[^0-9,-]+/ig;</code>
+            <code>const regexp = /[^0-9,-]+/g;</code>
             <code>const newStr = str.replace(regexp, '');</code>
             <code>const number = Number(newStr.replace(',','.'))</code>
             <code>console.log(number); <span class="comment">// 60755.63</span></code>
@@ -512,10 +509,10 @@
         </p>
         <pre class="fs18">
             <code>const str = 'https://www.asna.ru/cart/pharmacies/1234/order/123/';</code>
-            <code>const regexp = /pharmacies\/(\d+)/g;</code>
+            <code>const regexp = /pharmacies\/\d+/g;</code>
             <code>const match = str.match(regexp);</code>
             <code>console.log(match); <span class="comment">// ['pharmacies/1234']</span></code>
-            <code>const res = match ? Number(match[0].replace(/[^0-9]/g, '')) : -1</code>
+            <code>const res = match ? Number(match[0].replace(/\D/g, '')) : -1;</code>
             <code>console.log(res); <span class="comment">// 1234</span></code>
         </pre>
     </section>
