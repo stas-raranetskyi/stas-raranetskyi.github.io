@@ -370,7 +370,7 @@
         </p>
         <pre class="fs22">
             <code>const str = '&lt;h1&gt;Hello, world!&lt;/h1&gt;';</code>
-            <code>const regexp = /&lt;([a-z0-9]+)&gt;.*&lt;\/\1&gt;/gi;</code>
+            <code>const regexp = /&lt;(h[0-6]+)&gt;.*&lt;\/\1&gt;/gi;</code>
             <code>console.log(str.match(regexp)); <span class="comment">// ['&lt;h1&gt;Hello, world!&lt;/h1&gt;']</span></code>
         </pre>
     </section>
