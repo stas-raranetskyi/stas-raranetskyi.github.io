@@ -1,0 +1,953 @@
+		
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+		<meta name="format-detection" content="telephone=no">
+		<title></title>
+		<link rel="stylesheet" href="fonts/fonts.css"/>
+		<link rel="stylesheet" href="css/reset.css"/>
+		<link rel="stylesheet" href="css/main.css"/>
+		<link rel="stylesheet" href="css/jClever.css"/>
+		<link rel="stylesheet" href="css/jquery.bxslider.css"/>
+		<link rel="stylesheet" href="css/jquery.jscrollpane.css"/>
+		<link rel="stylesheet" href="css/inner.css"/>
+		<link rel="stylesheet" href="css/media.css"/>
+		<link rel="stylesheet" href="css/inner-media.css"/>
+	
+	</head>
+	
+	<body>
+
+		<div class="overlay"></div>
+
+        <div class="burger no-desktop"><div><span></span></div></div>
+        
+        <div class="menu-index left-menu no-mobile">
+            
+            <ul>
+                <li><a href="#"><span>Блог</span></a></li>
+                <li><a href="#"><span>Парики и накладки</span></a></li>
+            </ul>
+
+        </div>
+        
+        <div class="menu-index right-menu no-mobile">
+            
+            <ul>
+                <li><a href="#contacts" class="open-popup"><span>Контакты</span></a></li>
+                <li><a href="#about" class="open-popup"><span>Про нас</span></a></li>
+            </ul>
+
+        </div>
+	
+		<div class="container container_mod1_1 container-for-filter o-scroll" id="js-scroll">
+
+        <div class="filter-container">
+            <div class="content-wraper">
+                <form action="#">
+                <a class="close-filter" href="#"></a>
+                <div class="filter-head">
+                    <a href="#" class="filter-head-button">Сбросить</a>
+                    <div class="filter-head-check">
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-100" />
+                        <label for="checkbox-avail-100">Акционные товары</label>
+                    </div>
+                    <div class="filter-head-check">
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-101" />
+                        <label for="checkbox-avail-101">Только в наличии</label>
+                    </div>
+                </div>
+                <div class="filters-body">
+                    <div class="filters-block">
+                        <div class="filters-title">тип<span class="filter-point">:</span> <span class="filters-title-arrow"></span></div>
+                        <div class="filters-mobile-wrap">
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail-103" />
+                            <label for="checkbox-avail-103">Парики</label>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail-104" />
+                            <label for="checkbox-avail-104">Накладки</label>
+                        </div>
+                    </div>
+                    <div class="filters-block">
+                        <div class="filters-title">По длине волос<span class="filter-point">:</span> <span class="filters-title-arrow"></span></div>
+                        <div class="filters-mobile-wrap">
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-105" />
+                        <label for="checkbox-avail-105">10-20 см</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-106" />
+                        <label for="checkbox-avail-106">20-30 см</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-107" />
+                        <label for="checkbox-avail-107">30-40 см</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-108" />
+                        <label for="checkbox-avail-108">40+ см</label>
+                            </div>
+                    </div>
+                    <div class="filters-block">
+                        <div class="filters-title">По цвету волос<span class="filter-point">:</span> <span class="filters-title-arrow"></span></div>
+                        <div class="filters-mobile-wrap">
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-109" />
+                        <label for="checkbox-avail-109">Черный</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-110" />
+                        <label for="checkbox-avail-110">Каштановый</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-111" />
+                        <label for="checkbox-avail-111">Русый</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-112" />
+                        <label for="checkbox-avail-112">Шатен</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-113" />
+                        <label for="checkbox-avail-113">Зеленый</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-114" />
+                        <label for="checkbox-avail-114">Синий</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-115" />
+                        <label for="checkbox-avail-115">Голубой</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-116" />
+                        <label for="checkbox-avail-116">Рыжый</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-117" />
+                        <label for="checkbox-avail-117">Розовый</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-118" />
+                        <label for="checkbox-avail-118">Блонд</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-118" />
+                            </div>
+                    </div>
+                    <div class="filters-block">
+                        <div class="filters-title">По размеру<span class="filter-point">:</span> <span class="filters-title-arrow"></span></div>
+                        <div class="filters-mobile-wrap">
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-119" />
+                        <label for="checkbox-avail-119">18 см</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-120" />
+                        <label for="checkbox-avail-120">20 см</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-121" />
+                        <label for="checkbox-avail-121">22 см</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-122" />
+                        <label for="checkbox-avail-122">24 см</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-123" />
+                        <label for="checkbox-avail-123">26 см</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-124" />
+                        <label for="checkbox-avail-124">28 см</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-125" />
+                        <label for="checkbox-avail-125">30 см</label>
+                            </div>
+                    </div>
+                    <div class="filters-block">
+                        <div class="filters-title">По структуре волос<span class="filter-point">:</span> <span class="filters-title-arrow"></span></div>
+                        <div class="filters-mobile-wrap">
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-126" />
+                        <label for="checkbox-avail-126">Кучерявые</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-127" />
+                        <label for="checkbox-avail-127">Прямые</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-128" />
+                        <label for="checkbox-avail-128">Завитые</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-129" />
+                        <label for="checkbox-avail-129">Начес</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-130" />
+                        <label for="checkbox-avail-130">Косички</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-131" />
+                        <label for="checkbox-avail-131">Дреды</label>
+                            </div>
+                    </div>
+                    <div class="checkbox-avail-mob">
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-132" />
+                        <label for="checkbox-avail-132">Акционные товары</label>
+                        <input type="checkbox" class="checkbox-avail" id="checkbox-avail-133" />
+                        <label for="checkbox-avail-133">Только в наличии</label>
+                    </div>
+                </div>
+
+                    <a href="#" class="filter-head-button filter-head-button-mobile">Сбросить</a>
+                    </form>
+            </div>
+        </div>
+
+			<div class="menu-mobile no-desktop">
+				<ul>
+					<li><a href="#">Парики и накладки</a></li>
+					<li><a href="#">Блог</a></li>
+					<li><a href="#about" class="open-popup">Про нас</a></li>
+					<li><a href="#contacts" class="open-popup">Контакты</a></li>
+				</ul>
+				<ul class="social">
+					<li><a href="#" class="fb"></a></li>
+					<li><a href="#" class="vk"></a></li>
+					<li><a href="#" class="tw"></a></li>
+				</ul>
+			</div>
+	
+			<div class="header">
+				
+                <div class="logo">
+                    <a href="#">
+                        <img src="images/logo.png" alt="" class="png-img">
+                        <img src="images/logo.svg" alt="" class="svg-img">
+                    </a>
+                </div>
+                <a class="filter-open-button no-mobile" href="#">Все фильтры</a>
+				<div class="phones-header no-mobile">
+					
+					<div class="phones-header-city-item-wrap">
+						<a href="#" class="phones-header-city">Киев</a>
+						<div class="phones-header-city-item active" data-city="Киев">
+							<div>
+								361-23-88
+								<ul>
+									<li>+38 (096) 422-43-53</li>
+									<li>+38 (093) 925-06-07</li>
+									<li>+38 (066) 109-44-52</li>
+								</ul>
+							</div>
+							<span>+38 (044)</span>
+							<a href="#"></a>
+						</div>
+						<div class="phones-header-city-item" data-city="Москва">
+							<div>
+								721-35-23
+								<ul>
+									<li>+7 (495) 721-35-24</li>
+								</ul>
+							</div>
+							<span>+7 (495)</span>
+							<a href="#"></a>
+						</div>
+					</div>
+			
+				</div>
+	
+			</div>
+
+            <div class="filter-open-button-wrap no-desktop">
+                <a class="filter-open-button" href="#">Все фильтры</a>
+    		</div>
+
+            <div class="select-wrap">
+                <form action="#" class="select-form">
+                    <div class="secect-class-wrap">
+                        <select class="secect-class">
+                            <option value="1">Черный цвет</option>
+                            <option value="2">Белый</option>
+                            <option value="3">Каштановый</option>
+                            <option value="4">Пепельный</option>
+                            <option value="5">Розовый</option>
+                            <option value="6">Оранжевый</option>
+                            <option value="7">Голубой</option>
+                            <option value="8">Зеленый</option>
+                        </select>
+                        <div class="secect-class-text">Цвет</div>
+                    </div>
+                    <div class="secect-class-wrap">
+                        <select class="secect-class">
+                            <option value="1">51-53 см</option>
+                            <option value="2">52-54 см</option>
+                            <option value="3">53-55 см</option>
+                            <option value="4">54-56 см</option>
+                            <option value="5">55-57 см</option>
+                            <option value="6">56-58 см</option>
+                            <option value="7">57-59 см</option>
+                            <option value="8">58-60 см</option>
+                        </select>
+                        <div class="secect-class-text">длина</div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="content-wraper">
+                <h1 class="content-title">Парики</h1>
+                <ul class="kroshki">
+                    <li><a href="#" class="act">Главная</a></li>
+                    <li><span>Парики</span></li>
+                </ul>
+                <div class="mod1-text">
+                    <p>
+                        Любой из париков, на котором Вы остановите свой выбор в нашем салоне, выполнен по эксклюзивной технологии, аналогов которой нет ни в Украине, ни в мире, так как все наши технологии запатентованы и хранятся в строжайшем секрете.
+                    </p>
+                    <p>
+                        Сегодня внешняя ухоженность и хорошее здоровье являются одними из важных факторов в общем успехе, наравне с солидным опытом и достойным образованием.Красота начинается с волос!Испокон веков волосы принято считать неким символом индивидуальности и красоты
+                    </p>
+                </div>
+                <div class="js-animate -sticky" data-sticky data-sticky-target="#trigger-1"></div>
+                <div class="product-wrap parallax-section first"> 
+                    <div class="product-block js-parallax js-animate -sticky" data-speed="0.1" data-trigger="#trigger-1" data-sticky data-sticky-target="#trigger-1">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt=""/>
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Тип волос</span>
+                                <span class="link-show-child-text">Парики</span>
+                                <span class="link-show-child-link">Накладки</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail" checked/>
+                            <label for="checkbox-avail">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                    <div class="product-block product-block-two js-parallax" data-speed="0.12" data-trigger="#trigger-1">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt=""/>
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Тип волос</span>
+                                <span class="link-show-child-text">Парики</span>
+                                <span class="link-show-child-link">Накладки</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail" checked/>
+                            <label for="checkbox-avail">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                    <div class="product-block product-block-three js-parallax" data-speed="0.3" data-trigger="#trigger-1">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt=""/>
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Тип волос</span>
+                                <span class="link-show-child-text">Парики</span>
+                                <span class="link-show-child-link">Накладки</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail" checked/>
+                            <label for="checkbox-avail">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="foto-text-wrap" id="trigger-1">
+                <div class="foto-wrap">
+                    <img src="images/mod1-img/foto-text-img.jpg" alt=""/>
+                </div>
+                <div class="text-wrap">
+                    <div class="text-wrap-child text-wrap-child-bullshit">
+                        <div>
+                            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами.
+                        </div>
+                        <span>
+                            Изобретатель и разработчик всех наших технологий, учредитель<br>
+                            компании
+                        </span>
+                        <a href="#">Максим Воеводин</a>
+                    </div>
+                </div>
+            </div>
+            <div class="content-wraper content-wraper-double">
+                <div class="product-wrap parallax-section">
+                    <div class="product-block js-parallax" data-speed="0.1" data-trigger="#trigger-2">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt=""/>
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail-3" />
+                            <label for="checkbox-avail-3">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                    <div class="product-block js-parallax product-block-two" data-speed="0.12" data-trigger="#trigger-2">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt=""/>
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail-4" />
+                            <label for="checkbox-avail-4">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                    <div class="product-block js-parallax product-block-three" data-speed="0.15" data-trigger="#trigger-2">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt=""/>
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail-5" />
+                            <label for="checkbox-avail-5">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-wrap product-wrap-two parallax-section">
+                    <div class="product-block js-parallax" data-speed="0.12" data-trigger="#trigger-2">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt=""/>
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail-6" />
+                            <label for="checkbox-avail-6">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                    <div class="product-block js-parallax product-block-two" data-speed="0.1" data-trigger="#trigger-2">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt=""/>
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail-7" />
+                            <label for="checkbox-avail-7">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                    <div class="product-block js-parallax product-block-three" data-speed="0.16" data-trigger="#trigger-2">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt=""/>
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail-8" />
+                            <label for="checkbox-avail-8">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="foto-text-wrap foto-text-wrap-two" id="trigger-2">
+                <div class="text-wrap">
+                    <div class="text-wrap-child">
+                        <ul class="slider-text">
+                            <li>
+                                <div class="slider-loz">отличия наших париков</div>
+                                <div class="slider-title">Трессы</div>
+                                <div class="slider-inform">Все наши трессы изготавливаются вручную. Это позволяет сделать их очень тонкими и, при этом, чрезвычайно прочными.</div>
+                                <div class="slider-inform">Качественно изготовленные трессы служат залогом долговечности самого изделия. В наших трессах плетение производится в 3-5 волосков, что обеспечивает максимальную надежность крепления волос.</div>
+                                <a href="#" class="slider-link">Подробнее</a>
+                            </li>
+                            <li>
+                                <div class="slider-loz">отличия наших париков</div>
+                                <div class="slider-title">Трессы</div>
+                                <div class="slider-inform">Все наши трессы изготавливаются вручную. Это позволяет сделать их очень тонкими и, при этом, чрезвычайно прочными.</div>
+                                <div class="slider-inform">Качественно изготовленные трессы служат залогом долговечности самого изделия. В наших трессах плетение производится в 3-5 волосков, что обеспечивает максимальную надежность крепления волос.</div>
+                                <a href="#" class="slider-link">Подробнее</a>
+                            </li>
+                            <li>
+                                <div class="slider-loz">отличия наших париков</div>
+                                <div class="slider-title">Трессы</div>
+                                <div class="slider-inform">Все наши трессы изготавливаются вручную. Это позволяет сделать их очень тонкими и, при этом, чрезвычайно прочными.</div>
+                                <div class="slider-inform">Качественно изготовленные трессы служат залогом долговечности самого изделия. В наших трессах плетение производится в 3-5 волосков, что обеспечивает максимальную надежность крепления волос.</div>
+                                <a href="#" class="slider-link">Подробнее</a>
+                            </li>
+                            <li>
+                                <div class="slider-loz">отличия наших париков</div>
+                                <div class="slider-title">Трессы</div>
+                                <div class="slider-inform">Все наши трессы изготавливаются вручную. Это позволяет сделать их очень тонкими и, при этом, чрезвычайно прочными.</div>
+                                <div class="slider-inform">Качественно изготовленные трессы служат залогом долговечности самого изделия. В наших трессах плетение производится в 3-5 волосков, что обеспечивает максимальную надежность крепления волос.</div>
+                                <a href="#" class="slider-link">Подробнее</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="foto-wrap">
+                    <img src="images/mod1-img/foto-text-img.jpg" alt=""/>
+                </div>
+            </div>
+
+            <div class="foto-text-wrap foto-text-wrap-two foto-text-wrap-no-image">
+                <div class="text-wrap">
+                    <div class="text-wrap-child">
+                        <ul class="slider-text">
+                            <li>
+                                <div class="slider-loz">отличия наших париков</div>
+                                <div class="slider-title">Трессы</div>
+                                <div class="slider-inform">Все наши трессы изготавливаются вручную. Это позволяет сделать их очень тонкими и, при этом, чрезвычайно прочными.</div>
+                                <div class="slider-inform">Качественно изготовленные трессы служат залогом долговечности самого изделия. В наших трессах плетение производится в 3-5 волосков, что обеспечивает максимальную надежность крепления волос.</div>
+                                <a href="#" class="slider-link">Подробнее</a>
+                            </li>
+                            <li>
+                                <div class="slider-loz">отличия наших париков</div>
+                                <div class="slider-title">Трессы</div>
+                                <div class="slider-inform">Все наши трессы изготавливаются вручную. Это позволяет сделать их очень тонкими и, при этом, чрезвычайно прочными.</div>
+                                <div class="slider-inform">Качественно изготовленные трессы служат залогом долговечности самого изделия. В наших трессах плетение производится в 3-5 волосков, что обеспечивает максимальную надежность крепления волос.</div>
+                                <a href="#" class="slider-link">Подробнее</a>
+                            </li>
+                            <li>
+                                <div class="slider-loz">отличия наших париков</div>
+                                <div class="slider-title">Трессы</div>
+                                <div class="slider-inform">Все наши трессы изготавливаются вручную. Это позволяет сделать их очень тонкими и, при этом, чрезвычайно прочными.</div>
+                                <div class="slider-inform">Качественно изготовленные трессы служат залогом долговечности самого изделия. В наших трессах плетение производится в 3-5 волосков, что обеспечивает максимальную надежность крепления волос.</div>
+                                <a href="#" class="slider-link">Подробнее</a>
+                            </li>
+                            <li>
+                                <div class="slider-loz">отличия наших париков</div>
+                                <div class="slider-title">Трессы</div>
+                                <div class="slider-inform">Все наши трессы изготавливаются вручную. Это позволяет сделать их очень тонкими и, при этом, чрезвычайно прочными.</div>
+                                <div class="slider-inform">Качественно изготовленные трессы служат залогом долговечности самого изделия. В наших трессах плетение производится в 3-5 волосков, что обеспечивает максимальную надежность крепления волос.</div>
+                                <a href="#" class="slider-link">Подробнее</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-wraper content-wraper-three parallax-section">
+                <div class="product-wrap">
+                    <div class="product-block js-parallax" data-speed="0.02" data-trigger="#trigger-3">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt="">
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail-9">
+                            <label for="checkbox-avail-10">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                    <div class="product-block js-parallax product-block-two" data-speed="0.05" data-trigger="#trigger-3">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt="">
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail-11">
+                            <label for="checkbox-avail-11">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                    <div class="product-block js-parallax product-block-three" data-speed="0.025" data-trigger="#trigger-3">
+                        <a href="#" class="product-block-link">
+                            <img src="images/mod1-img/prod-img.jpg" alt="">
+                        </a>
+                        <a class="product-block-link-show" href="#">
+                            <div class="link-show-title">GOLDie</div>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Размер</span>
+                                <span class="link-show-child-text">51-53 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Длина волос</span>
+                                <span class="link-show-child-text">20-30 см</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Цвет</span>
+                                <span class="link-show-child-text">Русый</span>
+                                <span class="link-show-child-link">Все русые</span>
+                            </span>
+                            <span class="link-show-child-wrap">
+                                <span class="link-show-child-title">Структура</span>
+                                <span class="link-show-child-text">Прямые</span>
+                                <span class="link-show-child-link">Все прямые</span>
+                            </span>
+                            <input type="checkbox" class="checkbox-avail" id="checkbox-avail-12">
+                            <label for="checkbox-avail-12">Есть в наличии</label>
+                            <span class="link-show-button">Заказать</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="foto-text-wrap" id="trigger-3">
+                <div class="foto-wrap">
+                    <img src="images/mod1-img/foto-text-img-bottom.jpg" alt="">
+                </div>
+                <div class="text-wrap">
+                    <div class="text-wrap-child">
+                       <div class="text-wrap-child-bottom-title">
+                           Парик как жизненная<br>
+                           необходимость
+                       </div>
+                        <div class="text-wrap-child-text">
+                            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта
+                        </div>
+                        <a href="#" class="slider-link">Подробнее</a>
+                        <a class="bottom-girl-link" href="#">Все статьи блога</a>
+                    </div>
+                </div>
+            </div>
+
+            <a class="load-content" href="#">Загрузить еще</a>
+
+            <div class="padding-footer"></div>
+
+    		<div class="popups">
+    			
+    			<a href="#" class="popup-close"></a>
+    			<a href="#" class="popup-back no-desktop popup-close"></a>
+
+    			<div class="popup-content">
+    				
+    				<div id="about" class="popup-body popup-item">
+
+    					<div class="popup-title">Про нас</div>
+    					
+    					<div class="slim-scroll-wrap">
+
+    						<div class="slim-scroll text">
+    							
+    							<p>
+    								За последние 10 лет наша компания сумела достичь поистине выдающихся результатов. На данный момент по качеству изготовления и реалистичности внешнего вида наши парики заслуженно занимают 1-е место!
+    							</p>
+    							<p>
+    								Нам удалось создать продукт такого уровня, который не проcто лучше, но по праву стал эталоном качества в мире изделий из натуральных волос.
+    							</p>
+    							<p>
+    								Благодаря этому многие женщины смогли преобразиться и стать такими, какими давно хотели себя видеть, не переживая о разоблачении своего маленького секрета!
+    							</p>
+    							<p>
+    								А для многих публичных женщин парики от Voevodins стали просто незаменимой частью личного гардероба.
+    							</p>
+    							<p>
+    								Потрясающий эффект преображения уже испытали на себе многие наши клиенты - политики, бизнес леди, звезды сцены и кино.
+    							</p>
+    							<p>
+    								Пробуйте и присоединяйтесь!
+    							</p>
+    							<h2>
+    								Секрет непредсказуемости образа от студии “Voevodins”
+    							</h2>
+    							<p>
+    								Парик, в общем понимании, это натуральные либо искусственные волосы, которые можно надеть на голову аналогично шапке. С его помощью можно создавать прически, на основе которых этот аксессуар сделан. Каждая женщина стремится к красоте, неповторимому совершенству и привлекательности. Достижение внешнего совершенства может сопровождаться разнообразными экспериментами с волосами и прической. Именно поэтому каждый женский облик уникален по-своему.
+    							</p>
+    							<p>
+    								Парик, в общем понимании, это натуральные либо искусственные волосы, которые можно надеть на голову аналогично шапке. С его помощью можно создавать прически, на основе которых этот аксессуар сделан. Каждая женщина стремится к красоте, неповторимому совершенству и привлекательности. Достижение внешнего совершенства может сопровождаться разнообразными экспериментами с волосами и прической. Именно поэтому каждый женский облик уникален по-своему.
+    							</p>
+    							<p>
+    								Парик, в общем понимании, это натуральные либо искусственные волосы, которые можно надеть на голову аналогично шапке. С его помощью можно создавать прически, на основе которых этот аксессуар сделан. Каждая женщина стремится к красоте, неповторимому совершенству и привлекательности. Достижение внешнего совершенства может сопровождаться разнообразными экспериментами с волосами и прической. Именно поэтому каждый женский облик уникален по-своему.
+    							</p>
+
+    						</div>
+    						
+    					</div>
+    					
+    				</div>
+
+    				<div id="contacts" class="popup-body popup-item">
+
+    					<div class="city-wrap-contact">
+    					
+    					<div class="popup-title toggle-city-popup">
+    						<span>Киев</span>
+    						<a href="#">Москва</a>
+    					</div>
+
+    						<div class="city-wrap-contact-item active">
+    							<div class="text">
+    								<p>
+    									Уважаемые дамы и господа! Перед посещением нашего салона обязательно записывайтесь на прием по одному из перечисленных телефонов. В противном случае могут возникнуть нежелательные накладки или отсутствовать нужные мастера.
+    								</p>
+    								<div class="phones-contact-popup">
+    									<span>+38 (096) 422-43-53</span>
+    									<span>+38 (093) 925-06-07</span>
+    									<span>+38 (066) 109-44-52</span>
+    								</div>
+    								<p>
+    									Киев 01032, Салон-студия Voevodins, ул.Саксаганского 121, оф. 100
+    								</p>
+    							</div>
+
+    							<div class="watch-to-map no-desktop">
+    								<a href="#">Смотреть на карте</a>
+    							</div>
+    						
+    							<div class="map-wrap" data-coords="50.441898,30.498064">
+    								<div id="map1"></div>
+    							</div>
+    						</div>
+
+    						<div class="city-wrap-contact-item">
+    							<div class="text">
+    								<p>
+    									Уважаемые дамы и господа! Перед посещением нашего салона обязательно записывайтесь на прием по одному из перечисленных телефонов. В противном случае могут возникнуть нежелательные накладки
+    								</p>
+    								<div class="phones-contact-popup">
+    									<span>+38 (096) 422-43-53</span>
+    									<span>+38 (093) 925-06-07</span>
+    									<span>+38 (066) 109-44-52</span>
+    								</div>
+    								<p>
+    									Киев 01032, Салон-студия Voevodins, ул.Саксаганского 12
+    								</p>
+    							</div>
+    							<div class="watch-to-map no-desktop">
+    								<a href="#">Смотреть на карте</a>
+    							</div>
+    						
+    							<div class="map-wrap" data-coords="50.441898,30.498064">
+    								<div id="map2"></div>
+    							</div>
+    						</div>
+
+    					</div>
+
+    					<a href="#questions" class="questions-popup open-popup">Есть вопрос?</a>
+
+    				</div>
+
+
+    				<div id="questions" class="popup-item popup-item-inner">
+
+    					<div class="popup-title">Есть вопрос?</div>
+
+    					<div class="form-popup">
+    						<div class="row">
+    							<input type="text" placeholder="Ваше имя">
+    						</div>
+    						<div class="row">
+    							<input type="text" placeholder="Контактный телефон">
+    						</div>
+    						<div class="row">
+    							<input type="text" placeholder="E-mail">
+    						</div>
+    						<div class="row">
+    							<textarea placeholder="Ваш вопрос"></textarea>
+    						</div>
+    						<div class="row">
+    							<div class="g-recaptcha" data-sitekey="6LcBYhwUAAAAANcOhnT2R24_IqwOht0WJrqUblsu"></div>
+    							<script src='https://www.google.com/recaptcha/api.js?onload=CaptchaCallback'></script>
+    						</div>
+    						<div class="row">
+    							<input type="submit" value="Отправить">
+    						</div>
+    					</div>
+
+    					<a href="#" class="back-popup">Контакты</a>
+
+    				</div>
+    				
+    			</div>
+
+    		</div>
+
+
+			
+			<ul class="social no-mobile">
+				<li><a href="#" class="fb"></a></li>
+				<li><a href="#" class="vk"></a></li>
+				<li><a href="#" class="tw"></a></li>
+			</ul>
+	
+			<div class="copy no-mobile">
+				<div class="copy-part">
+					2017 © Voevodins
+				</div>
+				<div class="copy-part">
+					Розробка сайта
+					<a href="#" class="ww"></a>
+				</div>
+			</div>
+
+            <div class="copy">
+                <div class="copy-part">
+                    2017 © Voevodins
+                </div>
+                <div class="copy-part">
+                    Розробка сайта
+                    <a href="#" class="ww"></a>
+                </div>
+            </div>
+	
+		</div>
+		
+	    <script src="js/jquery-1.11.1.js"></script>
+	    <script src="js/jClever.min.js"></script>
+	    <script src="js/jquery.bxslider.js"></script>
+	    <script src="js/jquery.jscrollpane.min.js"></script>
+	    <script src="js/jquery.mousewheel.js"></script>
+	    <script src="js/jquery.slimscroll.min.js"></script>
+	    <script src="js/modernizr-custom.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/main.js"></script>
+	    <script src="js/inner.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCcj257CiCWvJchzjnqlBbLKZUZJpZ13M"></script>
+	    
+	</body>
+	</html>
