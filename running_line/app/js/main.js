@@ -7,7 +7,7 @@ var RunningArrow = function(id, settings){
         lines: settings.lines || [],
         circles: settings.circles || [],
         widthArrow: settings.widthArrow || widthArrow,
-        weightArrow: settings.weightArrow || 3,
+        weightArrow: settings.weightArrow || 4,
         colorArrow: settings.colorArrow || '#FC273D',
         colorLines: settings.colorLines || 'rgba(255, 100, 75, 1)',
         weightLines: settings.weightLines || 2,
