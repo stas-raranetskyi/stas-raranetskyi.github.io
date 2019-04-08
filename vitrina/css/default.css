@@ -1,5 +1,0 @@
-.after-clear:after {
-  display: block;
-  content: '';
-  clear: both;
-}
