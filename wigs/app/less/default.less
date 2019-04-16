@@ -1,0 +1,30 @@
+.border-radius(@radius) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+.transition(@time,@rule){
+  -webkit-transition: @rule @time ease;
+  -moz-transition: @rule @time ease;
+  -o-transition: @rule @time ease;
+  -ms-transition: @rule @time ease;
+  transition: @rule @time ease;
+}
+.opacity(@k,@i){
+  opacity: @k;
+  filter: alpha(opacity=@i);
+}
+.after-clear{
+  &:after{
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+@reg: 'Conv_circe';
+@bold: 'Conv_circe-bold';
+@ebold: 'Conv_circe-extra-bold';
+@elight: 'Conv_circe-extra-light';
+@light: 'Conv_circe-light';
+@thin: 'Conv_circe-thin';
